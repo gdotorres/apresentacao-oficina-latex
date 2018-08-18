@@ -1,0 +1,79 @@
+\section{Formatação básica}
+
+\begin{frame}[fragile] \frametitle{Formatação básica}
+\begin{itemize}
+	\item Somente texto cru não faz muita coisa
+	\item Vários elementos de formatação também se fazem presentes no Latex
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Negrito, itálico e sublinhado}
+\begin{figure}[!t]
+\caption{Exemplo de texto negrito}
+\begin{lstlisting}
+Eis que você está digitando um texto e deseja fazer um destaque. @*\sel{$\backslash$textbf\{Bom, aqui estão algumas palavras em negrito\}}*@.
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{$\backslash$textbf\{texto\}}
+	\begin{itemize}
+		\item Formata texto em negrito
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Negrito, itálico e sublinhado}
+\begin{figure}[!t]
+\caption{Exemplo de texto itálico}
+\begin{lstlisting}
+Usualmente, utiliza-se texto em itálico para destacar palavras estrangeiras, como @*\sel{$\backslash$textit\{smartphone\}}*@.
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{$\backslash$textit\{texto\}}
+	\begin{itemize}
+		\item Formata texto em itálico
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Negrito, itálico e sublinhado}
+\begin{figure}[!t]
+\caption{Exemplo de texto sublinhado}
+\begin{lstlisting}
+E dá pra @*\sel{$\backslash$underline\{deixar elementos sublinhados\}}*@.
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{$\backslash$underline\{texto\}}
+	\begin{itemize}
+		\item Formata texto em sublinhado
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Negrito, itálico e sublinhado}
+\begin{figure}[!t]
+\caption{Exemplo de comandos de formatação aninhados}
+\begin{lstlisting}
+E o que acontece se fizermos uma \textbf{\textit{salada}} \textit{\underline{mista}}?
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item Quando fazemos $\backslash$\texttt{comando}, estamos invocando um comando.
+	\item Podemos invocar comandos aninhados
+	\begin{itemize}
+		\item \texttt{$\backslash$comando1\{$\backslash$comando2\{texto\}\}}
+	\end{itemize}
+	\item Primeiro destaque: Negrito e itálico
+	\item Segundo destaque: Itálico e sublinhado
+\end{itemize}
+\end{frame}

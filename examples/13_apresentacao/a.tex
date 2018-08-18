@@ -1,0 +1,44 @@
+\documentclass{beamer}	% Mudança na classe documento
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+
+% Modo de apresentação
+\mode<presentation>
+{
+  \usetheme{default}
+  \usecolortheme{default}
+  \usefonttheme{default}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+}
+
+% Título, autor, instituto, data ... bem parecido com a classe de documento 
+\title[Your Short Title]{Your Presentation}
+\author{You}
+\institute{Where You're From}
+\date{Date of Presentation}
+
+\begin{document}
+
+% Utilizar begin frame e end frame para definir um slide
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Introduction}
+
+\begin{itemize}
+  \item Olá eu sou um item
+\end{itemize}
+
+% Utilizar begin block e end block para definir um bloco no slide
+\begin{block}{Exemplo}
+Aqui tem a explicação de "Exemplo"
+\end{block}
+
+\end{frame}
+
+\end{document}

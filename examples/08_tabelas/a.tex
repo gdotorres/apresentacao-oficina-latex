@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\source}[1]{\\ Fonte: #1}
+
+\usepackage{multirow}	% Necessário para linhas que ocupam mais de uma célula
+
+\begin{document}
+
+A Tabela~\ref{tabela:simples} é simples:
+
+\begin{table}[!h]
+\centering
+\caption{Quatro primeiras letras do alfabeto}
+\label{tabela:simples}
+	\begin{tabular}{|c|c|} \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{Autoria própria}
+\end{table}
+
+A Tabela~\ref{t:c} é complexa:
+
+\begin{table}[!h]
+\centering
+\caption{A escalação brasileira no dia que não veio o hexa}
+\label{t:c}
+\begin{tabular}{|c|l|l|l|}
+\hline
+\multicolumn{4}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Escalação da Seleção Brasileira\\ Brasil 1x2 Bélgica (06/07/2018)\end{tabular}}} \\ \hline
+Goleiro                                                         & GOL               & 1                & Alisson                         \\ \hline
+\multirow{4}{*}{Defesa}                                         & LAD               & 22               & Fagner                          \\ \cline{2-4} 
+                                                                & ZAG               & 2                & Thiago Silva                    \\ \cline{2-4} 
+                                                                & ZAG               & 3                & Miranda                         \\ \cline{2-4} 
+                                                                & LAE               & 12               & Marcelo                         \\ \hline
+\multicolumn{1}{|l|}{\multirow{3}{*}{Meio-campo}}               & VOL               & 17               & Fernandinho                     \\ \cline{2-4} 
+\multicolumn{1}{|l|}{}                                          & VOL               & 15               & Paulinho                        \\ \cline{2-4} 
+\multicolumn{1}{|l|}{}                                          & MEI               & 11               & Philippe Coutinho               \\ \hline
+\multirow{3}{*}{Ataque}                                         & ATA               & 19               & Willian                         \\ \cline{2-4} 
+                                                                & ATA               & 10               & Neymar                          \\ \cline{2-4} 
+                                                                & CTA               & 9                & Gabriel Jesus                   \\ \hline
+\end{tabular}
+\source{Autoria própria}
+\end{table}
+
+
+\end{document}

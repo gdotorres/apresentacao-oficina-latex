@@ -1,0 +1,100 @@
+\section{Texto}
+
+\begin{frame}[fragile] \frametitle{Inserção de texto}
+\begin{itemize}
+	\item Para inserir texto, é extremamente simples
+	\item Basta digitá-lo dentro do corpo de documento
+	\item Entre \texttt{$\backslash$begin\{document\}} e \texttt{$\backslash$end\{document\}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Inserção de texto}
+\begin{figure}[!t]
+\caption{Exemplo de digitação simples de texto em Latex}
+\begin{lstlisting}
+(@*\ldots*@)
+\begin{document}
+(@*\ldots*@)
+	Escrever um texto em LaTeX é simples como testar todos os caracteres como "The quick brown fox jumps over the lazy dog".
+(@*\ldots*@)
+\end{document}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Inserção de texto}
+\begin{itemize}
+	\item O próprio LaTeX acha o melhor meio de fazer o texto caber dentro das margens
+	\begin{itemize}
+		\item Utiliza o espaçamento adequadamente
+		\item Consegue fazer a quebra de palavras utilizando separação de sílabas para melhor disposição do texto em uma linha
+	\end{itemize}
+	\item Porém um texto pode apresentar outras características
+	\begin{itemize}
+		\item Como fazer um novo parágrafo?
+		\item Uma nova linha?
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame} \frametitle{Parágrafos}
+\begin{itemize}
+	\item Um método para adição de parágrafos
+	\begin{itemize}
+		\item Inserção de uma linha em branco entre dois parágrafos.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Parágrafos}
+\begin{figure}[!t]
+\caption{Exemplo de inserção de parágrafos}
+\begin{lstlisting}
+(@*\ldots*@)
+\begin{document}
+(@*\ldots*@)
+	Escrever um texto em LaTeX é simples como testar todos os caracteres como "The quick brown fox jumps over the lazy dog".
+
+	Existe uma linha em branco acima da primeira linha, logo esta linha será um novo parágrafo.
+	Note que esta frase não aparece em um novo parágrafo, já que não existe uma linha em branco entre a frase anterior e esta.
+(@*\ldots*@)
+\end{document}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Nova linha}
+\begin{itemize}
+	\item Diferentes métodos para adição de uma nova linha
+	\begin{enumerate}
+		\item Método usual: comando $\backslash\backslash$
+		\item Método alternativo: comando $\backslash$newline
+	\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Inserção de texto}
+\begin{figure}[!t]
+\caption{Exemplo de nova linha pelo comando $\backslash\backslash$}
+\begin{lstlisting}
+(@*\ldots*@)
+\begin{document}
+(@*\ldots*@)
+	Escrever um texto em LaTeX é simples como testar todos os caracteres como "The quick brown fox jumps over the lazy dog". \\ Existem duas contrabarras logo após a primeira frase, logo esta frase aparece em uma nova linha.
+(@*\ldots*@)
+\end{document}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item Nova linha \textbf{não é} novo parágrafo
+	\begin{itemize}
+		\item Parágrafo tem o recuo à direita em relação a uma nova linha
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+	

@@ -1,0 +1,206 @@
+\section{Figuras}
+
+\begin{frame}[fragile] \frametitle{Figuras}
+\begin{itemize}
+	\item Podemos inserir figuras, ilustrações, gráficos, dentre outros no nosso documento
+	\item O ambiente de inserção de figuras é do tipo \textit{float}
+	\begin{itemize}
+		\item Tal qual o ambiente \texttt{table}, que permite a colocação de tabelas
+	\end{itemize}
+	\item Comandos simples, bem diferente do visto em tabelas
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Figuras}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de figura}
+\begin{lstlisting}
+\begin{figure}[!h]
+\centering
+\caption{Uma bola}
+\includegraphics[scale=0.09]{ibagens/ball.jpg}
+\source{A internet}
+\end{figure}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+\vspace{-0.5cm}
+\begin{figure}[!h]
+\centering
+\caption{Uma bola}
+\includegraphics[scale=0.09]{ibagens/ball.jpg}
+\\ \small{Fonte: A internet}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{O ambiente \texttt{figure}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de figura}
+\begin{lstlisting}
+@*\sel{\textbackslash{}begin\{figure\}[!h]}*@
+\centering
+\caption{Uma bola}
+\includegraphics[scale=0.09]{ibagens/ball.jpg}
+\source{A internet}
+@*\sel{\textbackslash{}end\{figure\}[!h]}*@
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}begin\{figure\}} e \sel{\textbackslash{}end\{figure\}}
+	\begin{itemize}
+		\item Define um ambiente de tabela
+		\item Pode ter como argumento opcional o \textbf{posicionamento} do \textit{float} dentro do documento\footnote{Ver Tabela~\ref{tab:posicaofloats}}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{O ambiente \texttt{figure}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de figura}
+\begin{lstlisting}
+\begin{figure}[!h]
+@*\sel{\textbackslash{}centering}*@
+@*\seli{\textbackslash{}caption\{Uma bola\}}*@
+\includegraphics[scale=0.09]{ibagens/ball.jpg}
+@*\selii{\textbackslash{}source\{A internet\}}*@
+\end{figure}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}centering}\footnote{Ver slide~\ref{slide:floatcentering}}, \seli{\textbackslash{}caption\{legenda\}}\footnote{Ver slide~\ref{slide:floatcaptionsource}} e \selii{\textbackslash{}source\{fonte\}}\footnote{Ver slides~\ref{slide:floatcaptionsource} e~\ref{slide:floatjustsource}}
+	\begin{itemize}
+		\item Elementos comuns a \textit{floats}, como visto nas tabelas
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Inclusão de imagens}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de figura}
+\begin{lstlisting}
+\begin{figure}[!h]
+\centering
+\caption{Uma bola}
+@*\sel{\textbackslash{}includegraphics[scale=0.09]\{ibagens/ball.jpg\}}*@
+\source{A internet}
+\end{figure}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}includegraphics[opcional]\{arquivo\}}
+	\begin{itemize}
+		\item Faz a inclusão de um arquivo de imagem externo ao Latex
+		\item Em \texttt{arquivo} é passado o caminho onde está a imagem que deseja-se mostrar no documento
+		\begin{itemize}
+			\item Formatos aceitos: \texttt{pdf}, \texttt{png} e \texttt{jpg}
+			\item Para aceitar outros formatos, somente com pacotes adicionais
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Inclusão de imagens}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de figura}
+\begin{lstlisting}
+\begin{figure}[!h]
+\centering
+\caption{Uma bola}
+@*\sel{\textbackslash{}includegraphics[scale=0.09]\{ibagens/ball.jpg\}}*@
+\source{A internet}
+\end{figure}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}includegraphics[opcional]\{arquivo\}}
+	\begin{itemize}
+		\item Em \texttt{opcional} podem ser passados alguns argumentos optativos, sendo os mais utilizados:
+		\begin{itemize}
+			\item \texttt{scale=escala}, onde fazemos o redimensionamento da imagem
+			\item \texttt{width=valor}, onde limitamos a largura da imagem
+			\item Dentre outros
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%\usepackage{graphicx}
+\begin{frame}[fragile] \frametitle{Inclusão de imagens}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de figura}
+\begin{lstlisting}
+@*\seli{\textbackslash{}usepackage\{graphicx\}}*@
+(@*\ldots*@)
+\begin{document}
+(@*\ldots*@)
+\begin{figure}[!h]
+\centering
+\caption{Uma bola}
+@*\sel{\textbackslash{}includegraphics[scale=0.09]\{ibagens/ball.jpg\}}*@
+\source{A internet}
+\end{figure}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}includegraphics[opcional]\{arquivo\}}
+	\begin{itemize}
+		\item Por padrão, o Latex \textbf{não} tem suporte a este comando
+		\item Necessariedade de um pacote
+		\begin{itemize}
+			\item \texttt{graphicx}
+			\item Incluímos no preâmbulo do documento \seli{\textbackslash{}usepackage\{graphicx\}}
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Refência a figuras}
+
+\begin{itemize}
+	\item Vimos como fazer refência à seções e tabelas
+	\item Referencia de figuras = referência de tabelas
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Refência a figuras}
+\begin{figure}[!t]
+\caption{Exemplo de figuras}
+\begin{lstlisting}
+\begin{figure}[!h]
+\centering
+\caption{Uma bola}
+@*\sel{\textbackslash{}label\{minhaimagem\}}*@
+\includegraphics[scale=0.09]{ibagens/ball.jpg}
+\source{A internet}
+\end{figure}
+
+Na Figura~@*\seli{\textbackslash{}ref\{minhaimagem\}}*@, são mostrados (@*\ldots*@)
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item Utilizamos o par de comandos \sel{\textbackslash{}label} e \seli{\textbackslash{}ref}, tal qual tabelas\footnote{Ver slide~\ref{slide:referenciatabela}}
+\end{itemize}
+
+\end{frame}
+
+%\label{tab:posicaofloats}
+

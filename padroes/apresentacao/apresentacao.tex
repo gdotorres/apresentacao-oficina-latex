@@ -1,0 +1,73 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 4.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%isse o mesmo para o Oeste e por isso foi contratado sem fazer testes.
+%
+% Modificações por Giovane Torres para desenvolvimento do template de apresentação do IFSul
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{beamer}
+
+\mode<presentation> {
+    \usetheme{Madrid}
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\definecolor{darkgreen}{RGB}{0, 51, 0}
+\definecolor{lightgreen}{RGB}{204, 255, 204}
+\definecolor{forestgreen}{RGB}{0, 102, 0}
+
+\setbeamercolor{structure}{fg=forestgreen}
+\setbeamercolor{frametitle}{bg=forestgreen}
+\setbeamercolor{background canvas}{bg=lightgreen}
+\setbeamercolor{title}{bg=forestgreen}   
+
+\title[Título curto]{\large{Título Longo}} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Seu nome} % Your name
+\institute[Seu instituto]
+{
+\url{seu@email.com} \\
+\vspace{0.5cm}
+Trabalho de Conclusão de Curso \\
+Orientador: Nome do orientador \\
+\hspace{0.5 cm}
+}
+% Your email address
+
+\date{\today} % Date, can be changed to a custom date
+\begin{document}
+
+\begin{frame}
+\vspace{-0.5cm}
+\begin{center}
+\includegraphics[scale=0.0425]{if.pdf}
+\hspace{6cm}
+\includegraphics[scale=0.13]{tsi.pdf}
+\end{center}
+\vspace{-0.75cm}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame} \frametitle{Título do slide}
+
+Conteúdo do slide..
+
+\end{frame}
+
+\end{document}

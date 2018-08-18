@@ -1,0 +1,209 @@
+\section{Ambiente}
+
+\begin{frame} \frametitle{Iniciando um documento no formato .tex}
+\begin{itemize}
+	\item Criar um arquivo .tex
+	\item Deve ser necessário alguns comandos
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Iniciando um documento no formato .tex}
+\begin{figure}[!t]
+\caption{Exemplo de "Olá mundo"~em Latex}
+\begin{lstlisting}
+\documentclass{article}
+
+\begin{document}
+	Ola mundo
+\end{document}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Iniciando um documento no formato .tex}
+\begin{figure}[!t]
+\caption{Exemplo de "Olá mundo"~em Latex}
+\begin{lstlisting}
+@*\sel{$\backslash$documentclass\{article\}}*@
+
+\begin{document}
+	Ola mundo
+\end{document}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{$\backslash$documentclass\{article\}}
+	\begin{itemize}
+		\item Define a classe de documento que será utilizada
+		\item \texttt{article}: Artigo
+		\item Existem diversas opções que permite diferentes formatos de documentos
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+% Exemplos de documentos...
+
+\begin{frame}[fragile] \frametitle{Iniciando um documento no formato .tex}
+\begin{figure}[!t]
+\caption{Exemplo de "Olá mundo"~em Latex}
+\begin{lstlisting}
+\documentclass{article}
+
+@*\sel{$\backslash$begin\{document\}}*@
+	Ola mundo
+@*\sel{$\backslash$end\{document\}}*@
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{$\backslash$begin\{document\}} e \sel{$\backslash$end\{document\}}
+	\begin{itemize}
+		\item Delimita o escopo de conteúdo do documento
+		\begin{itemize}
+			\item Também chamado de corpo do documento
+		\end{itemize}
+		\item O que vem antes de \texttt{$\backslash$begin\{document\}} é chamado de \textbf{preâmbulo} do documento
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame} \frametitle{Preâmbulo do documento}
+\begin{itemize}
+	\item Primeira metade de um arquivo .tex
+	\begin{itemize}
+		\item \textbf{Sempre} antes do texto que irá compor o documento
+	\end{itemize}
+	\item Múltiplas funcionalidades
+	\begin{itemize}
+		\item Tipo de documento
+		\item Informações para formatar o documento corretamente
+		\item Carregamento de pacotes que auxiliam para algumas especificidades
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame} \frametitle{Corpo do documento}
+\begin{itemize}
+	\item Segunda metade do arquivo .tex
+	\item Contém todas as informações referentes a conteúdo do documento
+	\begin{itemize}
+		\item Texto bruto
+		\item Comandos para formatação de texto
+		\item Inserção de elementos adicionais
+		\begin{itemize}
+			\item Figuras, tabelas, fórmulas matemáticas, \ldots
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame} \frametitle{Localidade}
+\begin{itemize}
+	\item Por padrão, o~Latex~por si só não é suficiente
+	\item Precisamos estabelecer a localidade para a escrita correta de textos
+	\item \textbf{Caso de exemplo:} Documento simples com a visualização do texto 
+	\begin{itemize}
+		\item Pasta \textbf{examples}: Pasta 01\_localizacao\_incorreta
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame} \frametitle{Localidade}
+\begin{itemize}
+	\item Adaptar o Latex~para a localidade que desejamos
+	\begin{itemize}
+		\item Suporte a diversas linguagens espalhadas pelo globo
+	\end{itemize}
+	\item Modificar para o Latex conseguir interpretar os acentos corretamente -- além de alterar a localidade para português brasileiro.
+	\begin{itemize}
+		\item \textbf{Preâmbulo} do documento
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Localidade}
+\begin{figure}[!t]
+\caption{Inserindo localidade em Latex}
+\begin{lstlisting}
+\documentclass{article}
+
+@*\sel{$\backslash$usepackage[brazil]\{babel\}}*@		% Comando para pôr a localidade português brasileiro 
+\usepackage[utf8]{inputenc} 	% Comando para reconhecer entradas utilizando a codificação UTF-8
+
+\begin{document}
+(@*\ldots*@)
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{$\backslash$usepackage[brazil]\{babel\}}
+	\begin{itemize}
+		\item Datas e palavras fornecidas pela formatação do Latex~são traduzidas para português brasileiro
+		\item Se desejável, pode-se trocar a opção entre colchetes para a linguagem que quiser
+		\begin{itemize}
+			\item \texttt{english}, \texttt{spanish}, \ldots
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Localidade}
+\begin{figure}[!t]
+\caption{Inserindo localidade em Latex}
+\begin{lstlisting}
+\documentclass{article}
+
+\usepackage[brazil]{babel}		% Comando para pôr a localidade português brasileiro
+@*\sel{$\backslash$usepackage[utf8]\{inputenc\}}*@ 	% Comando para reconhecer entradas utilizando a codificação UTF-8
+
+\begin{document}
+(@*\ldots*@)
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{$\backslash$usepackage[utf8]\{inputenc\}}
+	\begin{itemize}
+		\item Mostra corretamente caracteres com acento, cedilha, dentre outros
+		\item Tecnicamente, faz com que a codificação lida como entrada pelo Latex seja UTF-8, a qual tem suporte a vários caracteres (inclusos os utilizados no português)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Localidade}
+\begin{figure}[!t]
+\caption{Inserindo localidade em Latex}
+\begin{lstlisting}
+\documentclass{article}
+
+\usepackage[brazil]{babel}		% Comando para pôr a localidade português brasileiro
+@*\sel{$\backslash$usepackage[utf8]\{inputenc\}}*@	% Comando para reconhecer entradas utilizando a codificação UTF-8
+
+\begin{document}
+(@*\ldots*@)
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{$\backslash$usepackage[utf8]\{inputenc\}}
+	\begin{itemize}
+		\item Podem ser usados outros tipos de codificação, como \texttt{latin1} em vez de \texttt{utf8}, a qual corresponde à codificação ISO 8859-1
+		\item \textbf{Recomendação pessoal}: Usar UTF-8
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+

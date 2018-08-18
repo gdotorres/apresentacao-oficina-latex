@@ -1,0 +1,15 @@
+\ProvidesFile{t1futurabb.fd}[Futura Super Bold]
+\DeclareFontFamily{T1}{futurabb}{}
+\DeclareFontShape{T1}{futurabb}{m}{n}{ <-> futurabb}{}
+
+\DeclareFontShape{T1}{futurabb}{bx}{n}{<->ssub * futurabb/m/n}{}
+
+\DeclareFontShape{T1}{futurabb}{m}{it}{<->ssub * ptm/m/it}{}
+\DeclareFontShape{T1}{futurabb}{m}{sl}{<->ssub * ptm/m/sl}{}
+\DeclareFontShape{T1}{futurabb}{m}{sc}{<->ssub * ptm/m/sc}{}
+
+\DeclareFontShape{T1}{futurabb}{bx}{it}{<->ssub * ptm/b/it}{}
+\DeclareFontShape{T1}{futurabb}{bx}{sl}{<->ssub * ptm/b/sl}{}
+\DeclareFontShape{T1}{futurabb}{bx}{sc}{<->ssub * ptm/b/sc}{}
+
+\pdfmapline{+futurabb\space <futurabb.ttf\space <T1-WGL4.enc}

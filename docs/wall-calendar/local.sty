@@ -1,0 +1,167 @@
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures={TeX}}
+\setmainfont{TeX Gyre Pagella}
+\newfontfamily\dejaVuSans{DejaVu Sans}
+
+% === June ===
+
+\SetPhoto[bleed=3mm, file={obscure-crop}, yOffset=-150mm]{June}
+
+\SetQuote[yOffset=-3mm]{June}{%
+\centering
+\setlength{\parskip}{10pt}%
+\Large
+\color{black!80}
+
+I shall have less to say,\\
+But I shall be gone.
+
+\textit{The Sound of the Trees} by Robert Frost
+}
+
+\SetCalendar[bg/.style={opacity=1}]{June}
+
+\SetEvents{June}{%
+\parseMonthMarksDayTextUsing{./data/events.csv}%
+\parseMonthMarksDayText%
+\parseMonthMarksNote%
+}{%
+\raggedright
+\parseMonthEvents[%
+  filter pred = hasNote,
+  format cmd = {
+    \textsuperscript{\eMark}~\eMonthShort~\eDay:\space%
+    \eNote\ifnumless{\eIdx}{\eMaxIdx}{,\space}{}%
+   },
+]%
+}
+
+% === July ===
+
+\SetPhoto[bleed=3mm, file={obscure-crop}]{July}
+
+\SetQuote[%
+  xOffset=0.5\linewidth - 0.5\paperwidth -3mm,
+  yOffset=-20mm,
+]{July}{%
+\begin{tikzpicture}%
+\node [
+  fill=white, opacity=0.6, minimum width={\paperwidth + 3mm},
+  minimum height=30mm] {};%
+\node [] {%
+\begin{minipage}{\paperwidth + 3mm}%
+\centering
+\Large
+\color{white}
+
+I shall have less to say,\\
+But I shall be gone.
+
+\textit{The Sound of the Trees} by Robert Frost
+\end{minipage}%
+};
+\end{tikzpicture}%
+}
+
+\SetCalendar[bg/.style={opacity=1}]{July}
+
+\SetEvents{July}{%
+\parseMonthMarksDayTextUsing{./data/events.csv}%
+\parseMonthMarksDayText%
+\parseMonthMarksNote%
+}{%
+\raggedright
+\parseMonthEvents[%
+  filter pred = hasNote,
+  format cmd = {
+    \textsuperscript{\eMark}~\eMonthShort~\eDay:\space%
+    \eNote\ifnumless{\eIdx}{\eMaxIdx}{,\space}{}%
+   },
+]%
+}
+
+% === August ===
+
+\SetPhoto[bleed=3mm, file={obscure-crop}]{August}
+
+\SetQuote[xOffset=-5mm, yOffset=-20mm]{August}{%
+\raggedright
+\setlength{\parskip}{10pt}%
+\Large
+\color{white}
+
+I shall set forth for somewhere,\\
+I shall make the reckless choice\\
+Some day when they are in voice\\
+And tossing so as to scare\\
+The white clouds over them on.\\
+I shall have less to say,\\
+But I shall be gone.
+
+\textit{The Sound of the Trees} by Robert Frost
+}
+
+\SetCalendar[bg/.style={opacity=0.8}]{August}
+
+\SetEvents{August}{%
+\parseMonthMarksDayTextUsing{./data/events.csv}%
+\parseMonthMarksDayText%
+\parseMonthMarksNote%
+}{%
+\raggedright
+\parseMonthEvents[%
+  filter pred = hasNote,
+  format cmd = {
+    \textsuperscript{\eMark}~\eMonthShort~\eDay:\space%
+    \eNote\ifnumless{\eIdx}{\eMaxIdx}{,\space}{}%
+   },
+]%
+}
+
+% === Year Planner ===
+
+\newcommand\plannerYearFmt{\fontsize{26}{26}\selectfont\color{orangegold}}
+
+\newlength\plannerNotesSep
+\setlength{\plannerNotesSep}{3mm}
+
+\newcommand\preYearPlannerPageHook{%
+  \renewcommand\monthMarkFmt{\fontsize{7}{7}\selectfont}%
+  \setlength{\markNumberAbove}{-9pt}%
+  \setlength{\markNumberRight}{-6pt}%
+  \setlength{\markDayTextAbove}{-11pt}%
+  \setlength{\markDayTextRight}{-6pt}%
+}
+
+\newcommand\postYearPlannerPageHook{%
+  \setlength{\markNumberAbove}{-10pt}%
+  \setlength{\markNumberRight}{-3pt}%
+  \setlength{\markDayTextAbove}{-10pt}%
+  \setlength{\markDayTextRight}{-3pt}%
+}
+
+\newcommand\printPlannerTitle{\plannerYearFmt \CalendarYear}
+
+\newcommand\YearPlannerPage{%
+\newpage
+\ifvarnishmask
+\mbox{}
+\else
+\preYearPlannerPageHook
+{\centering
+
+{\printPlannerTitle}
+
+\vspace*{7mm}
+
+\YearPlannerPortrait
+
+\vspace*{\plannerNotesSep}
+
+\plannerEvents
+
+}
+\postYearPlannerPageHook
+
+\fi
+}

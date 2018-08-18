@@ -1,0 +1,515 @@
+\section{Tabelas}
+
+\begin{frame}[fragile] \frametitle{Tabelas}
+\begin{itemize}
+	\item Comumente utilizamos uma tabela para fazer a sumarização de algumas informações
+	\begin{itemize}
+		\item Comparar informações
+		\item Mostra de dados
+	\end{itemize}
+	\item Um elemento não tão simples de ser inserido em Latex
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Tabelas}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}[!h]
+\centering
+\caption{legenda}
+	\begin{tabular}{|c|c|} \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+\vspace{-0.5cm}
+\begin{table}[!h]
+\centering
+\caption{Resultado do Exemplo de tabelas}
+	\begin{tabular}{|c|c|} \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\\ \ownsrc
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{O ambiente \texttt{table}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+@*\sel{\textbackslash{}begin\{table\}[!h]}*@
+\centering
+\caption{legenda}
+	\begin{tabular}{|c|c|} \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{fonte}
+@*\sel{\textbackslash{}end\{table\}}*@
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}begin\{table\}} e \sel{\textbackslash{}end\{table\}}
+	\begin{itemize}
+		\item Define um ambiente de tabela
+		\begin{itemize}
+			\item Em especial, elementos como tabela e figura são chamados no Latex de \textit{floats}
+		\end{itemize}
+		\item Pode ter como argumento opcional o \textbf{posicionamento} do \textit{float} dentro do documento
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Posicionamento de \textit{floats}}
+\begin{itemize}
+	\item Definido logo após um comando \texttt{\textbackslash{}begin\{"float"\}}
+	\begin{itemize}
+		\item Exemplo: \texttt{\textbackslash{}begin\{table\}[!h]}
+	\end{itemize}
+	\item Indica um ou mais possíveis posicionamentos do \textit{float} no Latex
+\end{itemize}
+
+\begin{table}[!t]
+\caption{Caracteres e seus significados}
+\label{tab:posicaofloats}
+\begin{tabular}{l|p{7.5cm}} \hline
+h & Posiciona "aqui", sendo colocado aproximadamente no mesmo ponto que ocorre no texto.            \\ \hline
+t & Posiciona ao topo da página             \\ \hline
+b & Posiciona na base da página             \\ \hline
+p & Insere em uma página especial somente para floats     \\ \hline
+! & Sobrepõe os parâmetros internos que o Latex utiliza para determinar "boas"~posições para floats \\ \hline
+\end{tabular}
+\\ \vspace{0.25cm} \ownsrc
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile,label={slide:floatcentering}] \frametitle{Centralização de \textit{floats}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+@*\sel{\textbackslash{}centering}*@
+\caption{legenda}
+	\begin{tabular}{|c|c|} \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}centering}
+	\begin{itemize}
+		\item Denota que o \textit{float} utilizado seja centralizado no documento
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile,label={slide:floatcaptionsource}] \frametitle{Legenda e fonte de \textit{floats}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+@*\sel{\textbackslash{}caption\{legenda\}}*@
+	\begin{tabular}{|c|c|} \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+@*\seli{\textbackslash{}source\{fonte\}}*@
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}caption\{legenda\}}
+	\begin{itemize}
+		\item Legenda do \textit{float}
+	\end{itemize}
+	\item \seli{\textbackslash{}source\{fonte\}}
+	\begin{itemize}
+		\item Fonte do \textit{float}
+		\item Este comando é definido \textbf{somente} na classe do TCC do TSI
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile,label={slide:floatjustsource}] \frametitle{Fontes}
+\begin{itemize}
+	\item No caso da classe do TCC do TSI, o comando \texttt{\textbackslash{}source\{fonte\}} pode ser utilizado devido à uma linha de código na classe do documento:
+	\begin{itemize}
+		\item \texttt{\textbackslash{}newcommand\{\textbackslash{}source\}[1]\{\textbackslash{}\textbackslash{} Fonte: \#1\}}
+	\end{itemize}
+	\item Se adicionarmos tal linha de comando no preâmbulo de nosso documento, poderemos utilizar \texttt{\textbackslash{}source}
+	\item Mas o que é esta linha de comando \ldots?
+	\begin{itemize}
+		\item De maneira sucinta, estamos criando um novo comando chamado \texttt{\textbackslash{}source}, o qual requer um argumento. Este comando faz uma quebra de linha, adiciona o texto "Fonte: "~e utiliza o argumento fornecido.
+		\item Ao chamarmos \texttt{\textbackslash{}source\{Autoria própria\}}, seria a mesma coisa que inserir \texttt{{\textbackslash{}\textbackslash{} Fonte: Autoria própria}}
+		\end{itemize}	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{O ambiente \texttt{tabular}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+\caption{legenda}
+	@*\sel{\textbackslash{}begin\{tabular\}}*@{|c|c|} \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	@*\sel{\textbackslash{}end\{tabular\}}*@
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}begin\{tabular\}} e \sel{\textbackslash{}end\{tabular\}}
+	\begin{itemize}
+		\item Define um ambiente do tipo \textit{tabular}
+		\begin{itemize}
+			\item Permite o desenho/formatação de tabelas
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Parâmetros de \texttt{tabular}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+\caption{legenda}
+	\begin{tabular}@*\sel{\{|c|c|\}}*@ \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item O ambiente \texttt{tabular} requer um argumento obrigatório, o qual indica vários parâmetros da tabela
+	\begin{enumerate}
+		\item Número de colunas da tabela
+		\item Alinhamento do texto nas colunas da tabela
+		\item Se a tabela apresenta linhas verticais
+	\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Parâmetros de \texttt{tabular}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+\caption{legenda}
+	\begin{tabular}{|@*\sel{c}*@|@*\sel{c}*@|}\hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{enumerate}
+	\item Número de colunas da tabela
+	\begin{itemize}
+		\item Caso de exemplo: Temos \textbf{dois} caracteres alfabéticos. Assim, nossa tabela irá conter \textbf{duas} colunas
+		\item Outro exemplo: \texttt{\{|l|c|c|r|\}}. Neste caso, há quatro caracteres. Logo, quatro colunas.
+	\end{itemize}
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Parâmetros de \texttt{tabular}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+\caption{legenda}
+	\begin{tabular}{|@*\sel{c}*@|@*\sel{c}*@|} \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{enumerate}
+	\setcounter{enumi}{1}
+	\item Alinhamento do texto nas colunas da tabela
+	\begin{itemize}
+		\item Dependendo do caractere utilizado, este irá definir qual o alinhamento do texto dentro da tabela de cada coluna 
+		\begin{itemize}
+			\item 1 caractere = 1 coluna
+		\end{itemize}
+	\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Alinhamento de texto nas colunas das tabelas}
+
+\begin{table}[!t]
+\caption{Caracteres e seus significados}
+\begin{tabular}{l|p{9cm}} \hline
+\texttt{l}			& Coluna com texto justificado à esquerda \\ \hline
+\texttt{c}			& Coluna com texto centralizado \\ \hline
+\texttt{r}			& Coluna com texto justificado à direita \\ \hline
+\texttt{p\{tam\}}	& Coluna com tamanho fixo definido em \texttt{tam}. Se o texto ultrapassar o tamanho definido, há uma quebra de linha no texto. O texto é verticalmente alinhado ao topo \\ \hline
+\end{tabular}
+\\ \vspace{0.25cm} \ownsrc
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Parâmetros de \texttt{tabular}}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+\caption{legenda}
+	\begin{tabular}{@*\sel{|}*@c@*\sel{|}*@c@*\sel{|}*@} \hline
+		a & b \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	\item Presença ou ausência de linhas verticais entre as colunas
+	\begin{itemize}
+		\item Dois tipos de linhas verticais:
+		\begin{itemize}
+			\item \texttt{|}: linha vertical simples
+			\item \texttt{||}: linha vertical dupla
+		\end{itemize}
+		\item Se não há especificação de linhas, elas não serão desenhadas na tabela
+	\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Conteúdo da tabela}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+\caption{legenda}
+	\begin{tabular}{|c|c|} \hline
+		@*\sel{a \& b}*@ \\ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item Dentro do ambiente tabular definimos o conteúdo das tabelas
+	\item Segue um formato:
+	\begin{itemize}
+		\item Texto da 1ª coluna \& Texto da 2ª coluna \& \ldots \& Texto da última coluna
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Conteúdo da tabela}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+\caption{legenda}
+	\begin{tabular}{|c|c|} \hline
+		a & b @*\sel{\textbackslash{}\textbackslash{}}*@ \hline
+		c & d \\ \hline
+	\end{tabular}
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item Quando chegamos no texto da última coluna dentro de uma linha e desejamos inicializar uma nova linha, utilizamos o comando de nova linha (\texttt{\textbackslash{}\textbackslash{}})
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Conteúdo da tabela}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+\caption{legenda}
+	\begin{tabular}{|c|c|}@*\sel{\textbackslash{}hline}*@
+		a & b \\ @*\sel{\textbackslash{}hline}*@
+		c & d \\ @*\sel{\textbackslash{}hline}*@
+	\end{tabular}
+\source{fonte}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item Da mesma maneira que podemos inserir linhas verticais ou não, podemos fazê-la com linhas horizontais
+	\item Utilizamos o comando \texttt{\textbackslash{}hline}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Como fazer uma tabela destas?}
+\begin{table}[!t]
+\centering
+\caption{A escalação brasileira no dia que não veio o hexa}
+\scalebox{0.85}{
+\begin{tabular}{|c|l|l|l|}
+\hline
+\multicolumn{4}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Escalação da Seleção Brasileira\\ Brasil 1x2 Bélgica (06/07/2018)\end{tabular}}} \\ \hline
+Goleiro & GOL & 1  & Alisson           \\ \hline
+\multirow{4}{*}{Defesa}             & LAD & 22 & Fagner            \\ \cline{2-4} 
+        & ZAG & 2  & Thiago Silva      \\ \cline{2-4} 
+        & ZAG & 3  & Miranda           \\ \cline{2-4} 
+        & LAE & 12 & Marcelo           \\ \hline
+\multicolumn{1}{|l|}{\multirow{3}{*}{Meio-campo}} & VOL & 17 & Fernandinho       \\ \cline{2-4} 
+\multicolumn{1}{|l|}{}& VOL & 15 & Paulinho          \\ \cline{2-4} 
+\multicolumn{1}{|l|}{}& MEI & 11 & Philippe Coutinho \\ \hline
+\multirow{3}{*}{Ataque}             & ATA & 19 & Willian           \\ \cline{2-4} 
+        & ATA & 10 & Neymar            \\ \cline{2-4} 
+        & CTA & 9  & Gabriel Jesus     \\ \hline
+\end{tabular}
+}
+\\ \ownsrc
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Como fazer uma tabela destas?}
+
+\begin{figure}[!t]
+\caption{Código-fonte da tabela mostrada anteriormente}
+\begin{lstlisting}
+\begin{table}[!t]
+\centering
+\caption{A escalação brasileira naquele dia}
+\begin{tabular}{|c|l|l|l|} \hline
+\multicolumn{4}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Escalação da Seleção Brasileira\\ Brasil 1x2 Bélgica (06/07/2018)\end{tabular}}} \\ \hline
+Goleiro & GOL & 1 & Alisson \\ \hline
+\multirow{4}{*}{Defesa} & LAD & 22 & Fagner \\ \cline{2-4} 
+ & ZAG & 2 & Thiago Silva \\ \cline{2-4} 
+ & ZAG & 3 & Miranda \\ \cline{2-4} 
+ & LAE & 12 & Marcelo \\ \hline
+(@*\ldots*@)
+\end{lstlisting}
+\ownsrc
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Como fazer uma tabela destas?}
+\begin{figure}[!t]
+\caption{Código-fonte da tabela mostrada anteriormente -- segunda parte}
+\begin{lstlisting}
+(@*\ldots*@)
+\multicolumn{1}{|l|}{\multirow{3}{*}{Meio-campo}} & VOL & 17 & Fernandinho \\ \cline{2-4} 
+\multicolumn{1}{|l|}{}& VOL & 15 & Paulinho \\ \cline{2-4} 
+\multicolumn{1}{|l|}{}& MEI & 11 & Philippe Coutinho \\ \hline
+\multirow{3}{*}{Ataque} & ATA & 19 & Willian \\ \cline{2-4} 
+ & ATA & 10 & Neymar \\ \cline{2-4} 
+ & CTA & 9 & Gabriel Jesus \\ \hline
+\end{tabular}
+\\ \vspace{0.2cm} \small{Fonte: Autoria própria}
+\end{table}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Como fazer uma tabela destas?}
+\begin{itemize}
+	\item Complexidade de código aumenta substancialmente conforme mais recursos de tabela são utilizados
+	\begin{itemize}
+		\item Colunas que ocupam várias colunas, linhas que ocupam várias linhas, diferentes alinhamentos na mesma coluna em linhas diferentes, \ldots
+	\end{itemize}
+	\item Existem facilidades: Você constrói a tabela de maneira intuitiva e o código é gerado automaticamente
+	\begin{itemize}
+		\item \url{https://www.tablesgenerator.com/}
+		\item \url{https://truben.no/table/}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Refência a tabelas}
+
+\begin{itemize}
+	\item Vimos como fazer refência à seções, e como o Latex consegue lidar com a numeração automaticamente
+	\item Eventualmente um trabalho conterá tabelas as quais precisam ser explicadas durante o texto
+	\item Tabelas são usualmente numeradas, e assim podemos referenciá-las
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile,label={slide:referenciatabela}] \frametitle{Refência a tabelas}
+\begin{figure}[!t]
+\caption{Exemplo de tabelas}
+\begin{lstlisting}
+\begin{table}
+\centering
+\caption{legenda}
+@*\sel{\textbackslash{}label\{minhatabela\}}*@
+	\begin{tabular} (@*\ldots*@) \end{tabular}
+\source{fonte}
+\end{table}
+
+Na Tabela~@*\seli{\textbackslash{}ref\{minhatabela\}}*@, são mostrados (@*\ldots*@)
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item Fazemos de maneira parecida com o que ocorre na referência à seções
+	\item O comando \texttt{\textbackslash{}label} deve ir logo abaixo de \texttt{\textbackslash{}caption}
+	\item Usamos \texttt{\textbackslash{}ref} para referenciar a tabela
+\end{itemize}
+
+\end{frame}

@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumitem}
+
+\begin{document}
+
+Lista não numerada:
+\begin{itemize}
+	\item Item não numerado
+	\item Outro item não numerado
+\end{itemize}
+
+Lista enumerada:
+\begin{enumerate}
+	\item Item numerado
+	\item Outro item numerado
+	\item Mais um item numerado
+\end{enumerate}
+
+Lista enumerada (alfabeticamente com letras maiúsculas):
+\begin{enumerate}[label=\Alph*]
+	\item Item
+	\item Outro item
+\end{enumerate}
+
+Lista descritiva:
+\begin{description}
+	\item [Item] Um item
+	\item [Outro item] Outro item
+	\item Item sem descrição
+\end{description}
+
+Listas aninhadas:
+\begin{itemize}
+	\item Um item não numerado
+	\begin{enumerate}
+		\item Item enumerado-x
+		\begin{enumerate}
+			\item Item enumerado-y
+		\end{enumerate}
+	\end{enumerate}
+\end{itemize}
+	
+\end{document}

@@ -1,0 +1,129 @@
+\section{Secionamento}
+
+\begin{frame}[fragile] \frametitle{Secionamento}
+\begin{itemize}
+	\item A fim de promover uma organização melhor no texto, utilizamos seções
+	\item Estas seções são \textbf{usualmente} numeradas
+	\item Caso de exemplo: \textbf{Template do TCC-TSI}
+	\begin{itemize}
+		\item Cinco níveis de seção
+		\item Seção primária (1), seção secundária (1.1), \ldots, seção quinária (1.1.1.1.1)
+	\end{itemize}
+	\item Numeração das seções: feita \textbf{automaticamente}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Secionamento}
+\begin{table}[!t]
+	\centering
+	\caption{Tipo de seção e seu respectivo comando para o template do TCC do TSI}	
+	\begin{tabular}{l|l}
+	\hline
+		\textbf{Nível da seção} & \textbf{Comando}                      \\ \hline
+		Primária                & \texttt{\textbackslash{}chapter\{nome\}}       \\ \hline
+		Secundária              & \texttt{\textbackslash{}section\{nome\}}       \\ \hline
+		Terciária               & \texttt{\textbackslash{}subsection\{nome\}}    \\ \hline
+		Quaternária             & \texttt{\textbackslash{}subsubsection\{nome\}} \\ \hline
+		Quinária                & \texttt{\textbackslash{}paragraph\{nome\}}     \\ \hline
+	\end{tabular}
+	\\ \vspace{0.3cm} \ownsrc
+\end{table}
+
+\begin{itemize}
+	\item As normas do IFSul nos restringem a no máximo seções quinárias
+	\item Usualmente estes comandos são redefinidos nas classes utilizadas
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Secionamento não numerado}
+\begin{itemize}
+	\item Eventualmente, pode-se haver a necessidade de estruturar uma seção no documento não numerada
+	\item Para isto, fazemos o uso do caractere \text{asterisco} (*) para tal fim
+	\begin{itemize}
+		\item Exemplo: \texttt{\textbackslash{}section*\{seção não numerada\}}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Secionamento (outras informações)}
+\begin{itemize}
+	\item Outras classes de documentos podem definir diferentes estilos de secionamento
+	\item Dentro da linguagem Latex são fornecidos até 7 níveis de secionamento
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Secionamento (outras informações)}
+\begin{table}[!t]
+	\centering
+	\caption{Tipo de seção e seu respectivo comando para o \textit{template} do TCC do TSI}	
+	\begin{tabular}{l|l}
+	\hline
+		\textbf{Nível da seção} & \textbf{Comando}									\\ \hline
+		Primária				& \texttt{\textbackslash{}part\{nome\}}				\\ \hline
+		Secundária				& \texttt{\textbackslash{}chapter\{nome\}}			\\ \hline
+		Terciária				& \texttt{\textbackslash{}section\{nome\}}			\\ \hline
+		Quaternária				& \texttt{\textbackslash{}subsection\{nome\}}		\\ \hline
+		Quinária				& \texttt{\textbackslash{}subsubsection\{nome\}}	\\ \hline
+		Senária					& \texttt{\textbackslash{}paragraph\{nome\}}		\\ \hline
+		Setenária				& \texttt{\textbackslash{}subparagraph\{nome\}}		\\ \hline
+	\end{tabular}
+	\\ \vspace{0.3cm} \ownsrc
+\end{table}
+
+\begin{itemize}
+	\item Se realmente quiséssemos ir a fundo, podíamos definir outros comandos para estabelecer \textbf{mais níveis de secionamento}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Referência à seções}
+\begin{itemize}
+	\item Eventualmente, podemos chegar a um ponto que precisamos fazer referência à uma determinada seção
+	\item Exemplo clássico: Dentro da introdução de um TCC, falamos sobre como as demais seções estão organizadas no documento.
+	\item Esta referenciação pode ser feita de maneira \textbf{automática}
+	\item Utilizaremos um par de comandos para tal fim: \texttt{label} e \texttt{ref}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Referência à seções}
+\begin{figure}[!t]
+\caption{Exemplo de rotulação e referenciação de seções}
+\begin{lstlisting}
+	\section{Laranjas} @*\sel{\textbackslash{}label\{s:laranjas\}}*@
+	Laranja é laranja por causa da cor laranja ou por causa da fruta laranja?
+
+	\section{Maracujás} @*\sel{\textbackslash{}label\{s:maracujas\}}*@
+	Uma questão foi feita na Seção~\ref{s:laranjas}. Os maracujás tem a cor amarela.
+\end{document}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}label\{nome do rótulo\}}
+	\begin{itemize}
+		\item Rotula um elemento em Latex. Neste caso, estamos utilizando para uma \texttt{section}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Referência à seções}
+\begin{figure}[!t]
+\caption{Exemplo de rotulação e referenciação de seções}
+\begin{lstlisting}
+\section{Laranjas} \label{s:laranjas}
+Laranja é laranja por causa da cor laranja ou por causa da fruta laranja?
+
+\section{Maracujás} \label{s:maracujas}
+Uma questão foi feita na Seção~@*\sel{\textbackslash{}ref\{s:laranjas\}}*@. Os maracujás tem a cor amarela.
+\end{document}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}ref\{nome do rótulo\}}
+	\begin{itemize}
+		\item Referencia um elemento em Latex previamente rotulado. O Latex encarrega-se de mostrar a numeração (neste caso) da seção corretamente
+	\end{itemize}
+\end{itemize}
+\end{frame}

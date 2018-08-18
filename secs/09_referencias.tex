@@ -1,0 +1,250 @@
+\section{Bibliografia}
+
+\begin{frame}[fragile] \frametitle{Bibliografia}
+\begin{itemize}
+	\item Desenvolvimento de bons trabalhos acadêmicos implicam em boas referências bibliográficas
+	\item Latex fornece um esquema de citações e referências bibliográficas
+	\begin{itemize}
+		\item Nomeia uma referência para depois citá-la
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Bibliografia do zero (Estilo)}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Bibliografia do zero}
+\begin{lstlisting}
+@*\sel{\textbackslash{}bibliographystyle\{acm\}}*@
+\bibliography{bibliografia.bib}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}bibliographystyle\{acm\}}
+	\begin{itemize}
+		\item Define o estilo de bibliografia a ser utilizado.
+		\item O Latex já fornece alguns como padrão
+		\begin{itemize}
+			\item \texttt{plain}, \texttt{unsrt}, \texttt{abbrv}, \texttt{alpha}, \ldots
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Bibliografia do zero (Estilo)}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Bibliografia do zero}
+\begin{lstlisting}
+@*\sel{\textbackslash{}bibliographystyle\{acm\}}*@
+\bibliography{bibliografia.bib}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}bibliographystyle\{acm\}}
+	\begin{itemize}
+		\item Podemos utilizar padrões personalizados
+		\item Tal qual existem as classes de documentos, também existem classes para bibliografia
+		\begin{itemize}
+			\item Comumente fornecidas em arquivos .bst
+		\end{itemize}
+		\item Classe do TCC do TSI: abnt.bst
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Bibliografia do zero}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Bibliografia do zero}
+\begin{lstlisting}
+\bibliographystyle{acm}
+@*\sel{\textbackslash{}bibliography\{bibliografia.bib\}}*@
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}bibliography\{arquivo\}}
+	\begin{itemize}
+		\item Informa qual o arquivo externo que fornece a bibliografia
+		\item Geralmente é atribuido a extensão .bib
+		\item Este arquivo segue um formato diferente
+		\begin{itemize}
+			\item \textbf{Bibtex}
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Arquivo .bib}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de uma entrada no arquivo .bib}
+\begin{lstlisting}[language=BibTeX]
+@*\sel{@article}*@{rodriguez1985consideraciones,
+  title={Consideraciones relativas a la actuaci{\'o}n y l{\'\i}mites de las oposiciones fonol{\'o}gicas interrupto/continuo y tenso/flojo en espa{\~n}ol},
+  author={Rodr{\'\i}guez, Alexandre Veiga},
+  journal={Verba: Anuario galego de filoloxia},
+  number={12},
+  pages={253--286},
+  year={1985},
+  publisher={Servicio de Publicaciones}
+}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{@tipo}
+	\begin{itemize}
+		\item Define o tipo de bibliografia. Se é artigo, livro, \textit{site}, dentre outros
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Arquivo .bib (Tipos)}
+
+\begin{itemize}
+	\item Existem diversos tipos para uma entrada de bibliografia
+	\item Formatos aceitos: 
+	\begin{itemize}
+		\item @article ,@book ,@collectedbook ,@conference ,@electronic ,@ieeetranbstctl ,@inbook ,@incollectedbook ,@incollection ,@injournal ,@inproceedings ,@manual ,@mastersthesis ,@misc ,@patent ,@periodical ,@phdthesis ,@preamble ,@proceedings ,@standard ,@string ,@techreport e @unpublished
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Arquivo .bib}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de uma entrada no arquivo .bib}
+\begin{lstlisting}[language=BibTeX]
+@article{@*\sel{rodriguez1985consideraciones}*@,
+  title={Consideraciones relativas a la actuación y límites de las oposiciones fonológicas interrupto/continuo y tenso/flojo en español},
+  author={Rodríguez, Alexandre Veiga},
+  journal={Verba: Anuario galego de filoloxia},
+  number={12},
+  pages={253--286},
+  year={1985},
+  publisher={Servicio de Publicaciones}
+}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{rótulo da referência}
+	\begin{itemize}
+		\item Define o rótulo da bibliografia
+		\item Importante pois usaremos ela para fazer a referência no texto
+		\item Neste caso, o nome é \texttt{rodriguez1985consideraciones}
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Arquivo .bib}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Exemplo de uma entrada no arquivo .bib}
+\begin{lstlisting}[language=BibTeX]
+@article{rodriguez1985consideraciones,
+  @*\sel{title}*@={Consideraciones relativas a la actuación y límites de las oposiciones fonológicas interrupto/continuo y tenso/flojo en español},
+  @*\sel{author}*@={Rodríguez, Alexandre Veiga},
+  @*\sel{journal}*@={Verba: Anuario galego de filoloxia},
+  @*\sel{number}*@={12},
+  @*\sel{pages}*@={253--286},
+  @*\sel{year}*@={1985},
+  @*\sel{publisher}*@={Servicio de Publicaciones}
+}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{campo da referência=\{valor\}}
+	\begin{itemize}
+		\item Estabelece um campo para a referência, o qual representa alguma informação
+		\begin{itemize}
+			\item Título, ano de publicação, revista, \ldots
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Arquivo .bib (Campos)}
+\begin{itemize}
+	\item Existem vários campos para uma entrada bibliográfica
+	\item Campos aceitos: 
+	\begin{itemize}
+		\item address, annote, author, booktitle, chapter, crossref, edition, editor, howpublished, institution, journal, key, month, note, number, organization, pages, publisher, school, series, title, type, volume, year
+	\end{itemize}
+	\item Dependendo do formato de bibliografia utilizado, cada \textbf{tipo} necessita de determinados \textbf{campos}
+	\begin{itemize}
+		\item O formato fornecido por abnt.bst insere alguns indicadores para caso de falta de informação
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Ainda sobre o arquivo .bib}
+\begin{itemize}
+	\item Caracteres especiais no arquivo .bib
+	\begin{itemize}
+		\item ã, â, á, à, ç, \ldots
+	\end{itemize}
+	\item Salvar o arquivo .bib \textbf{no mesmo formato de codificação que o .tex}
+	\begin{itemize}
+		\item UTF-8 sendo preferível
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Ainda sobre o arquivo .bib}
+\begin{itemize}
+	\item Precisamos construir toda a entrada formatada para todas as referências?
+	\begin{itemize}
+		\item Não necessariamente
+	\end{itemize}
+	\item Grande parte das bases de dados de livros, artigos, dentre outros, \textbf{já fornecem a bibliografia em formato Bibtex}
+	\begin{itemize}
+		\item Google Scholar
+		\item IEEE
+		\item ACM
+	\end{itemize}
+	\item Diminui os esforços para a bibliografia
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Citação bibliográfica}
+\begin{itemize}
+	\item Tendo uma entrada no arquivo .bib, podemos fazer a citação da mesma
+	\item Voltaremos ao nosso arquivo .tex
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Citação bibliográfica}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Citação bibliográfica}
+\begin{lstlisting}
+	Como dito em~@*\sel{\textbackslash{}cite\{rodriguez1985consideraciones\}}*@, existem alguns fatores (@*\ldots*@)
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}cite\{rótulo da citação\}}
+	\begin{itemize}
+		\item Faz a citação de uma bibliografia, utilizando um rótulo já definido
+		\begin{itemize}
+			\item O Latex já se encarrega de referenciar corretamente
+			\item Se for o caso, a numeração também fica a cargo do Latex
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}

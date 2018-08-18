@@ -1,0 +1,112 @@
+\section{Particularidades}
+
+\begin{frame}[fragile] \frametitle{Particularidades}
+
+\begin{itemize}
+	\item Adendo à codificação de caracteres
+	\item Fontes \texttt{TrueType}
+	\item Modularização
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Um adendo à codificação de caracteres}
+\begin{itemize}
+	\item Em alguns casos específicos, não será possível inserir caracteres especiais
+	\begin{itemize}
+		\item Quando editamos documentos com classes que fornecem diferentes codificações
+	\end{itemize}
+	\item É possível fazer a inserção de caracteres especiais \textbf{mesmo} em diferentes codificações
+	\item Existe comandos para isto
+	\begin{itemize}
+		\item Em algumas referências prontas do Bibtex é possível verificar tais comandos
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Um adendo à codificação de caracteres}
+\vspace{-0.5cm}
+\begin{figure}[!t]
+\caption{Um arquivo .bib qualquer}
+\begin{lstlisting}[language=BibTeX]
+@article{rodriguez1985consideraciones},
+  title={Consideraciones relativas a la actuaci@*\sel{\textbackslash{}'\{o\}}*@n y l@*\sel{\textbackslash{}'\{i\}}*@mites de las oposiciones fonol@*\sel{\textbackslash{}'\{o\}}*@gicas interrupto/continuo y tenso/flojo en espa@*\sel{\textbackslash{}\textasciitilde{}\{n\}}*@ol},
+  (@*\ldots*@)
+}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}adicional\{caractere\}}
+	\begin{itemize}
+		\item Permite a inserção de um caractere especial
+		\item Em \sel{caractere}, descrevemos qual o caractere que levará um "adendo"
+		\item Em \sel{adicional}, inserimos o que vai no caractere
+		\begin{itemize}
+			\item \sel{\textbackslash{}'\{o\}}: Estamos colocando \texttt{'} (que acento agudo) no caractere \texttt{o}
+			\item O resultado é o caractere especial \texttt{ó}
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Um adendo à codificação de caracteres}
+\vspace{-0.5cm}
+\begin{table}[!t]
+\centering
+\caption{Comandos para inserção de caracteres especiais utilizados em português}
+\begin{tabular}{l|l|l} \hline
+\textbf{Comando} & \textbf{Saída} & \textbf{Descrição} \\ \hline
+\texttt{\textbackslash{}`\{o\}}                  & ò & Acento grave \\ \hline
+\texttt{\textbackslash{}'\{o\}}                  & ó & Acento agudo \\ \hline
+\texttt{\textbackslash{}\textasciicircum{}\{o\}} & ô & Circunflexo  \\ \hline
+\texttt{\textbackslash{}$\sim$\{o\}}             & õ & Til          \\ \hline
+\texttt{\textbackslash{}c\{c\}}                  & ç & Cedilha      \\ \hline
+\end{tabular}
+\\ \vspace{0.2cm} \small{Fonte: Adaptado de: \url{https://en.wikibooks.org/wiki/LaTeX/Special_Characters}}
+\end{table}
+
+\begin{itemize}
+	\item Lembrete: Embora os exemplos acima na maioria das vezes utilizam \texttt{o} como exemplo, basta trocar o caractere para descrever outros caracteres especiais
+	\begin{itemize}
+		\item \texttt{\textbackslash{}'\{a\}}: \texttt{á}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Fontes \texttt{TrueType}}
+\begin{itemize}
+	\item Ao longo destes \textit{slides} foram vistos diversas vezes o uso de fontes \texttt{TrueType}
+	\begin{itemize}
+		\item Fontes as quais todos os caracteres ocupam o mesmo tamanho!
+		\item Fonte ideal para a mostra de \textbf{código}
+	\end{itemize}
+	\item Simples: \sel{\textbackslash{}texttt\{texto em truetype\}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Modularização}
+\begin{itemize}
+	\item Se assim desejarmos, podemos dividir nosso projeto em Latex em vários arquivos
+	\begin{itemize}
+		\item Interessante quando temos um projeto grande
+		\item Duas formas
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{\texttt{input} vs. \texttt{include}}
+\begin{itemize}
+	\item \sel{\textbackslash{}input\{nome do arquivo\}}
+	\begin{itemize}
+		\item Inclui um arquivo externo do tipo .tex
+		\item Funcionamento: Tudo que está dentro do arquivo externo é passado para onde houve a chamada do comando \texttt{\textbackslash{}input}
+	\end{itemize}
+	\item \sel{\textbackslash{}include\{nome do arquivo\}}
+	\begin{itemize}
+		\item Inclui um arquivo externo do tipo .tex, porém em uma \textbf{nova página}
+		\item Funcionamento: É feita uma quebra de página, e então o conteúdo do arquivo externo é passado para onde houve a chamada do comando \texttt{\textbackslash{}include}	
+	\end{itemize}
+\end{itemize}
+\end{frame}

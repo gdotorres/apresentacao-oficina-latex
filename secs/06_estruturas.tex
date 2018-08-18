@@ -1,0 +1,233 @@
+\section{Estruturas de Listas}
+
+\begin{frame}[fragile] \frametitle{Estruturas de Listas}
+\begin{itemize}
+	\item Em alguns casos podemos fazer uso de estruturas de listas para enumerar uma sequência de itens
+	\item Algo como está sendo visualizado nesta apresentação
+	\item Existem três tipos de estruturas de listas
+	\begin{itemize}
+		\item Não numeradas
+		\item Enumeradas
+		\item Descritivas
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Listas não numeradas}
+\begin{figure}[!t]
+\caption{Exemplo de estrutura de lista não numerada}
+\begin{lstlisting}
+@*\sel{\textbackslash{}begin\{itemize\}}*@
+	\item Um item
+	\item Outro item
+@*\sel{\textbackslash{}end\{itemize\}}*@
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}begin\{itemize\}} e \sel{\textbackslash{}end\{itemize\}}
+	\begin{itemize}
+		\item Denomina um \textbf{ambiente} de nome \texttt{itemize}, o qual permite construir listas não numeradas
+		\item Todo tipo de comando onde for utilizado neste estilo (\texttt{begin} e \texttt{end}) é chamado de ambiente em Latex
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Listas não numeradas}
+\begin{figure}[!t]
+\caption{Exemplo de estrutura de lista não numerada}
+\begin{lstlisting}
+\begin{itemize}
+	@*\sel{\textbackslash{}item}*@ Um item
+	@*\sel{\textbackslash{}item}*@ Outro item
+\end{itemize}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}item}
+	\begin{itemize}
+		\item Determina um item de uma lista não numerada
+		\item Este comando \textbf{deve} estar dentro de um ambiente que permite construir listas! (Ex: \texttt{itemize})
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Listas enumeradas}
+\begin{figure}[!t]
+\caption{Exemplo de estrutura de lista enumerada}
+\begin{lstlisting}
+@*\sel{\textbackslash{}begin\{enumerate\}}*@
+	\item Primeiro item enumerado
+	\item Segundo item enumerado
+@*\sel{\textbackslash{}end\{enumerate\}}*@
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}begin\{enumerate\}} e \sel{\textbackslash{}end\{enumerate\}}
+	\begin{itemize}
+		\item Denomina um ambiente de nome \texttt{enumerate}, o qual permite construir listas enumeradas
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Listas enumeradas}
+\begin{figure}[!t]
+\caption{Exemplo de estrutura de lista enumeradas}
+\begin{lstlisting}
+\begin{enumerate}
+	@*\sel{\textbackslash{}item}*@ Um item
+	@*\sel{\textbackslash{}item}*@ Outro item
+\end{enumerate}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}item}
+	\begin{itemize}
+		\item Determina um item de uma lista enumerada
+		\begin{itemize}
+			\item Neste caso é enumerada porque está \textbf{dentro do ambiente} \texttt{enumerate}
+		\end{itemize}
+		\item O Latex efetua a numeração da lista automaticamente
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Listas enumeradas manipuladas}
+
+\begin{itemize}
+	\item A priori, temos listas com números
+	\item Podemos ir além
+	\item Uso de um pacote \texttt{enumitem}
+	\begin{itemize}
+		\item \texttt{\textbackslash{}usepackage\{enumitem\}}
+		\item Permite fazer manipulação nas listas de modo a permitir listas ordenadas por caractere (a, b, \ldots), números romanos (i, ii, \ldots), dentre outros
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Listas enumeradas manipuladas}
+\begin{figure}[!t]
+\caption{Exemplo de estrutura de lista enumeradas}
+\begin{lstlisting}
+(@*\ldots*@)
+\usepackage{enumitem}
+(@*\ldots*@)
+\begin{document}
+(@*\ldots*@)
+\begin{enumerate}@*\sel{[label=\textbackslash{}roman*]}*@
+	\item Um item
+	\item Outro item
+\end{enumerate}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{[label=formato]}
+	\begin{itemize}
+		\item Determina que uma lista enumerada utilize um determinado formato
+		\item Neste caso, estamos utilizando \textbackslash{}roman*, o qual formata os itens de uma lista do tipo \texttt{enumerate} para números romanos
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Listas enumeradas manipuladas}
+\begin{itemize}
+	\item Argumento para formatação de lista enumerada é opcional
+	\begin{itemize}
+		\item Qualquer argumento que vier dentro de colchetes é considerado pela linguagem do Latex como argumento opcional
+	\end{itemize}
+	\item Se nada é passado para \texttt{\textbackslash{}begin\{enumerate\}} o padrão é utilizado (lista enumerada numericamente)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Formatos de listas enumeradas}
+\begin{table}[!h]
+	\centering
+	\caption{Comando usado e formato da lista enumerada}
+	\begin{tabular}{l|l}		
+	\hline
+		\textbf{Comando}       & \textbf{Formato} \\ \hline
+		\textbackslash{}alph   & a. b. c.         \\ \hline
+		\textbackslash{}Alph   & A. B. C          \\ \hline
+		\textbackslash{}arabic & 1. 2. 3.         \\ \hline
+		\textbackslash{}roman  & i. ii. iii.      \\ \hline
+		\textbackslash{}Roman  & I. II. III       \\ \hline
+	\end{tabular}
+	\\ \vspace{0.3cm} \ownsrc
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Listas descritivas}
+\begin{figure}[!t]
+\caption{Exemplo de estrutura de lista não numerada}
+\begin{lstlisting}
+@*\sel{\textbackslash{}begin\{description\}}*@
+	\item [Banana] Uma fruta
+	\item [Maçã] Outra fruta
+@*\sel{\textbackslash{}end\{description\}}*@
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}begin\{description\}} e \sel{\textbackslash{}end\{description\}}
+	\begin{itemize}
+		\item Denomina um ambiente de nome \texttt{description}, o qual permite construir listas descritivas
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Listas descritivas}
+\begin{figure}[!t]
+\caption{Exemplo de estrutura de lista não numerada}
+\begin{lstlisting}
+\begin{description}
+	@*\sel{\textbackslash{}item [Banana]}*@ Uma fruta
+	@*\sel{\textbackslash{}item [Maçã]}*@ Outra fruta
+\begin{description}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item \sel{\textbackslash{}item}
+	\begin{itemize}
+		\item Determina um item de uma lista descritiva
+		\begin{itemize}
+			\item Dentro dos colchetes vai a descrição de um item
+			\item Comumente formatado em negrito
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{\textit{Mix} de listas}
+\begin{figure}[!t]
+\caption{Exemplo de listas aninhadas}
+\begin{lstlisting}
+\begin{itemize}
+	\item Um item não numerado
+	\begin{enumerate}
+		\item Item enumerado-x
+		\begin{enumerate}
+			\item Item enumerado-y
+		\end{enumerate}
+	\end{enumerate}
+\end{itemize}
+\end{lstlisting}
+\ownsrc
+\end{figure}
+
+\begin{itemize}
+	\item Podemos inserir listas dentro de listas
+	\item Somente deve-se tomar cuidado em que nível estamos ao adicionar um item
+\end{itemize}
+\end{frame}

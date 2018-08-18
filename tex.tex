@@ -1,0 +1,195 @@
+\documentclass[t]{beamer}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{color}		% Colors
+\usepackage{graphicx}	% Allows including images
+\usepackage{booktabs}	% Allows the use of \toprule, \midrule and \bottomrule in tables
+
+\usepackage{fixltx2e}
+\usepackage{hyperref}
+
+\usepackage{array}
+\usepackage{multirow}
+
+% This is necessary to perform changes into original texttt
+\usepackage{textcomp}
+\usepackage{upquote}
+\usepackage{regexpatch}
+\usepackage{xparse}
+
+% Helps displaying correct quotes in texttt
+\usepackage{csquotes}
+
+\usepackage{natbib}
+\setlength{\bibhang}{0pt}
+\let\cite\citep
+
+% Code marker colors:
+\definecolor{darkgreen}{rgb}{0, 0.5, 0}
+\definecolor{auburn}{rgb}{0.43, 0.21, 0.1}
+\definecolor{darkspringgreen}{rgb}{0.09, 0.45, 0.27}
+\definecolor{deepcarmine}{rgb}{0.66, 0.13, 0.24}
+\definecolor{sapphire}{rgb}{0.03, 0.15, 0.4}
+\definecolor{carmine}{rgb}{0.59, 0.0, 0.09}
+\definecolor{goldenbrown}{rgb}{0.6, 0.4, 0.08}
+
+\mode<presentation> {
+	\usetheme{Madrid}
+	\usecolortheme{seagull}
+}
+
+\setbeamertemplate{caption}[numbered]
+
+\beamertemplatenavigationsymbolsempty
+
+\lstset{
+basicstyle=\ttfamily\footnotesize,
+keywordstyle=\bfseries\color{darkspringgreen},
+commentstyle=\itshape\color{purple!40!black},
+identifierstyle=\ttfamily\footnotesize,
+stringstyle=\color{auburn},
+language=[AlLaTeX]TeX,
+breaklines=true,
+xleftmargin=.05\textwidth, 
+xrightmargin=.05\textwidth,
+frame=single,
+tabsize=4,
+escapeinside={@*}{*@},
+literate=%
+{á}{{\'a}}1
+{à}{{\`a}}1
+{ã}{{\~a}}1
+{é}{{\'e}}1
+{ê}{{\^e}}1
+{í}{{\'i}}1
+{ó}{{\'o}}1
+{õ}{{\~o}}1
+{ô}{{\^o}}1
+{ú}{{\'u}}1
+{ü}{{\"u}}1
+{ç}{{\c{c}}}1
+{ñ}{{\~n}}1		
+}
+
+\setbeamertemplate{footline}
+    {\begin{beamercolorbox}[sep=1ex]{author in head/foot}
+      \hfill\insertframenumber%
+      \end{beamercolorbox}%
+}
+
+% TEXTTT
+% Changes into original texttt, in order to support a more flexible textcode
+\makeatletter
+\def\active@text@prime{\ifin@texttt\textquotesingle\else'\fi}
+\def\active@math@prime{^\bgroup\prim@s}
+\newif\ifin@texttt
+
+\regexpatchcmd{\pr@m@s}{\'}{\cA\'}{}{}
+\xapptocmd{\ttfamily}{\in@texttttrue}{}{}
+
+\begingroup\lccode`\~=`\'
+\lowercase{\endgroup\protected\def~}{%
+  \ifmmode
+    \expandafter\active@math@prime
+  \else
+    \expandafter\active@text@prime
+  \fi}
+\AtBeginDocument{\catcode`\'=\active}
+
+% fix \@resetactivechars not to redefine the active apostrophe
+\begingroup
+\obeylines\obeyspaces%
+\gdef\@resetactivechars{%
+\def^^M{\@activechar@info{EOL}\space}%
+\def {\@activechar@info{space}\space}%
+}%
+\endgroup
+
+\makeatother
+
+\renewcommand{\ttdefault}{pcr}
+\newcommand{\ownsrc}{\vspace{0.2cm} \small{Fonte: Autoria própria}}
+
+\newcommand{\bgcolor}[3]{\colorbox{#1}{\color{#2}{#3}}}
+\newcommand{\vmark}[2]{\textcolor{#1}{#2}}
+
+% HIGHLIGHTS
+\newcommand{\sel}[1]{\textbf{\texttt{\textcolor{sapphire}{#1}}}}
+\newcommand{\seli}[1]{\textbf{\texttt{\textcolor{carmine}{#1}}}}
+\newcommand{\selii}[1]{\textbf{\texttt{\textcolor{goldenbrown}{#1}}}}
+
+\newcommand{\change}[1]{\textbf{\texttt{\textcolor{blue}{#1}}}}
+\newcommand{\nota}[1]{\textbf{\texttt{#1}}}
+
+% Definição da linguagem bibLatex
+\lstdefinelanguage{BibTeX}{%
+	keywords=[1]{@article,@book,@collectedbook,@conference,@electronic,@ieeetranbstctl,@inbook,@incollectedbook,@incollection,@injournal,@inproceedings,@manual,@mastersthesis,@misc,@patent,@periodical,@phdthesis,@preamble,@proceedings,@standard,@string,@techreport,@unpublished},
+	keywords=[2]{address,annote,author,booktitle,chapter,crossref,edition,editor,howpublished,institution,journal,key,month,note,number,organization,pages,publisher,school,series,title,type,volume,year},
+   comment=[l][\itshape]{@comment},
+   sensitive=false,
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[\LaTeX]{\LaTeX}
+
+\author{Giovane Torres}
+\institute[UFPel]
+{
+Instituto Federal Sul-Riograndense \\
+Câmpus Pelotas \\
+Tecnologia em Sistemas para Internet \\
+\medskip \textit{ggiovaneotorres@gmail.com} 
+}
+\date{18 de Agosto de 2018}
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+% Motivaçãozinha 
+
+\begin{frame} \frametitle{Motivação}
+\begin{itemize}
+	\item Alternativa para escrita de relatórios, artigos, TCCs, dentre outros documentos acadêmicos
+	\item Abstrai a formatação para quem escreve o texto
+	\item Referenciação de seções, figuras e bibliografia
+\end{itemize}
+\end{frame}
+
+% Ferramentas
+\input{secs/00_ferramentas}
+% Ambiente
+\input{secs/01_ambiente}
+% Uso de classes
+\input{secs/02_classes}
+% Inserção de texto
+\input{secs/03_texto}
+% Formatação básica de texto
+\input{secs/04_basicformatacao}
+% Seções, subseções e etc..
+\input{secs/05_secs}
+% Estruturas de listas..
+\input{secs/06_estruturas}
+% Tabelas..
+\input{secs/07_tabelas}
+% Figuras..
+\input{secs/08_figuras}
+% Referências bibliográficas..
+\input{secs/09_referencias}
+% Particularidades extras..
+\input{secs/10_particularidades}
+% Outras possibilidades
+\input{secs/11_possibilidades}
+
+\end{document} 
+
