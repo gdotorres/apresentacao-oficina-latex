@@ -37,13 +37,77 @@
 \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile] \frametitle{Ambiente matemático}
+\begin{itemize}
+	\item Exemplos de uso do ambiente matemático
+\end{itemize}
+
+$$ \frac{n!}{k!(n-k)!} = \binom{n}{k} $$
+
+$$ \int_0^\infty \mathrm{e}^{-x}\,\mathrm{d}x $$
+
+\[ f(n) =
+  \begin{cases}
+    n/2       & \quad \text{if } n \text{ is even}\\
+    -(n+1)/2  & \quad \text{if } n \text{ is odd}
+  \end{cases}
+\]
+
+\end{frame}
+
 \begin{frame}[fragile] \frametitle{Outras funcionalidades}
 \begin{itemize}
 	\item Desenho de figuras
-	\item Gráficos
-	\item Códigos
-	\item Diversos
+	\begin{itemize}
+		\item Pacote TikZ
+	\end{itemize}
 \end{itemize}
+
+\begin{figure}[!h]
+\input{teximages/sttram.tex}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Outras funcionalidades}
+\begin{itemize}
+	\item Gráficos
+	\begin{itemize}
+		\item Pacote pgfplots
+	\end{itemize}
+\end{itemize}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.75]{pdfimages/requests-more-50k}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile] \frametitle{Outras funcionalidades}
+\begin{itemize}
+	\item Códigos
+	\begin{itemize}
+		\item Pacote listings
+	\end{itemize}
+\end{itemize}
+
+\begin{figure}[!h]
+\begin{lstlisting}[language=C++]
+class Coord {
+private:
+	int x;
+	int y;
+
+public:
+	Coord(int x, int y){
+		this.x = x;
+		this.y = y;
+	}
+
+	int getX(){ return x; }
+	int getY(){ return y; }
+}
+\end{lstlisting}
+\end{figure}
 \end{frame}
 
 

@@ -1,0 +1,56 @@
+\documentclass[12pt,preview]{standalone}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc} % acentuacao
+\usepackage[T1]{fontenc} % para permitir copiar corretamente de PDFs para textos
+
+\usepackage{hyperref}
+
+\input{../preamble/fp.tex}
+\input{../preamble/common.tex} 
+\input{../preamble/color.tex}
+\input{../preamble/todo.tex}
+\input{../preamble/charts.tex}
+
+\begin{document}
+
+% Pre-plot stuff
+% We will create an inline table called \datatable from memReqs.csv. We'll only read rows which have readReqs > 50k
+\pgfplotstablefilterread[col sep=comma]{../csvs/memReqs.csv}{benchmark}{readReqs}{< 50000}{\datatable}
+
+% Plot stuff
+\begin{tikzpicture}
+
+\begin{axis}[
+% Plot style
+ybar,
+% Size options
+width=\textwidth,height=7.5cm,
+% Limits of plot
+ymin=0,ymax=40000,
+enlarge x limits=0.025,
+% Bar options
+bar width=6pt,
+% Grid options
+ymajorgrids=true,yminorgrids=true,
+yminorticks=true,minor y tick num=1,
+% X ticks
+flexible xticklabels={\datatable}{benchmark},
+x tick label style={
+	rotate=45, 
+	font=\ttfamily\scriptsize,
+	anchor=north east, 
+	inner sep=0mm,
+},
+xtick=data,
+% Y ticks
+yticklabel={\pgfmathparse{\tick}\pgfmathprintnumber{\pgfmathresult}},
+% Axis labels
+ylabel=Main memory generated read requests,
+]
+\addplot+[black,fill=white] table[x expr=\coordindex,y=readReqs]{\datatable};
+\end{axis}
+
+\end{tikzpicture}
+
+\end{document}

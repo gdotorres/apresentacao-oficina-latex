@@ -7,14 +7,12 @@
 		\item Comparar informações
 		\item Mostra de dados
 	\end{itemize}
-	\item Um elemento não tão simples de ser inserido em Latex
+	\item Um elemento não tão simples de ser inserido em LaTeX
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Tabelas}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}[!h]
 \centering
@@ -26,24 +24,19 @@
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
-\vspace{-0.5cm}
 \begin{table}[!h]
 \centering
-\caption{Resultado do Exemplo de tabelas}
-	\begin{tabular}{|c|c|} \hline
-		a & b \\ \hline
-		c & d \\ \hline
-	\end{tabular}
-\\ \ownsrc
+\begin{tabular}{|c|c|} \hline
+	a & b \\ \hline
+	c & d \\ \hline
+\end{tabular}
 \end{table}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{O ambiente \texttt{table}}
 \vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 @*\sel{\textbackslash{}begin\{table\}[!h]}*@
 \centering
@@ -55,7 +48,6 @@
 \source{fonte}
 @*\sel{\textbackslash{}end\{table\}}*@
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -63,7 +55,7 @@
 	\begin{itemize}
 		\item Define um ambiente de tabela
 		\begin{itemize}
-			\item Em especial, elementos como tabela e figura são chamados no Latex de \textit{floats}
+			\item Em especial, elementos como tabela e figura são chamados no LaTeX de \textit{floats}
 		\end{itemize}
 		\item Pode ter como argumento opcional o \textbf{posicionamento} do \textit{float} dentro do documento
 	\end{itemize}
@@ -76,27 +68,25 @@
 	\begin{itemize}
 		\item Exemplo: \texttt{\textbackslash{}begin\{table\}[!h]}
 	\end{itemize}
-	\item Indica um ou mais possíveis posicionamentos do \textit{float} no Latex
+	\item Indica um ou mais possíveis posicionamentos do \textit{float} no LaTeX
 \end{itemize}
 
 \begin{table}[!t]
-\caption{Caracteres e seus significados}
 \label{tab:posicaofloats}
-\begin{tabular}{l|p{7.5cm}} \hline
+\begin{tabular}{c|p{7.5cm}} \hline
+\textbf{Caractere} & \multicolumn{1}{c}{\textbf{Significado}} \\ \hline
 h & Posiciona "aqui", sendo colocado aproximadamente no mesmo ponto que ocorre no texto.            \\ \hline
 t & Posiciona ao topo da página             \\ \hline
 b & Posiciona na base da página             \\ \hline
 p & Insere em uma página especial somente para floats     \\ \hline
-! & Sobrepõe os parâmetros internos que o Latex utiliza para determinar "boas"~posições para floats \\ \hline
+! & Sobrepõe os parâmetros internos que o LaTeX utiliza para determinar "boas"~posições para floats \\ \hline
 \end{tabular}
-\\ \vspace{0.25cm} \ownsrc
 \end{table}
 \end{frame}
 
 \begin{frame}[fragile,label={slide:floatcentering}] \frametitle{Centralização de \textit{floats}}
 \vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 @*\sel{\textbackslash{}centering}*@
@@ -108,7 +98,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -120,9 +109,7 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \end{frame}
 
 \begin{frame}[fragile,label={slide:floatcaptionsource}] \frametitle{Legenda e fonte de \textit{floats}}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -134,7 +121,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 @*\seli{\textbackslash{}source\{fonte\}}*@
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -166,9 +152,7 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{O ambiente \texttt{tabular}}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -180,7 +164,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -195,9 +178,7 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Parâmetros de \texttt{tabular}}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -209,7 +190,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -223,9 +203,7 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Parâmetros de \texttt{tabular}}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -237,7 +215,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{enumerate}
@@ -253,7 +230,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \begin{frame}[fragile] \frametitle{Parâmetros de \texttt{tabular}}
 \vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -265,7 +241,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{enumerate}
@@ -283,21 +258,17 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \begin{frame}[fragile] \frametitle{Alinhamento de texto nas colunas das tabelas}
 
 \begin{table}[!t]
-\caption{Caracteres e seus significados}
 \begin{tabular}{l|p{9cm}} \hline
 \texttt{l}			& Coluna com texto justificado à esquerda \\ \hline
 \texttt{c}			& Coluna com texto centralizado \\ \hline
 \texttt{r}			& Coluna com texto justificado à direita \\ \hline
 \texttt{p\{tam\}}	& Coluna com tamanho fixo definido em \texttt{tam}. Se o texto ultrapassar o tamanho definido, há uma quebra de linha no texto. O texto é verticalmente alinhado ao topo \\ \hline
 \end{tabular}
-\\ \vspace{0.25cm} \ownsrc
 \end{table}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Parâmetros de \texttt{tabular}}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -309,7 +280,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{enumerate}
@@ -327,9 +297,7 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Conteúdo da tabela}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -341,7 +309,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -354,9 +321,7 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Conteúdo da tabela}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -368,7 +333,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -377,9 +341,7 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Conteúdo da tabela}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -391,7 +353,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \source{fonte}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -403,7 +364,6 @@ p & Insere em uma página especial somente para floats     \\ \hline
 \begin{frame}[fragile] \frametitle{Como fazer uma tabela destas?}
 \begin{table}[!t]
 \centering
-\caption{A escalação brasileira no dia que não veio o hexa}
 \scalebox{0.85}{
 \begin{tabular}{|c|l|l|l|}
 \hline
@@ -421,14 +381,12 @@ Goleiro & GOL & 1  & Alisson           \\ \hline
         & CTA & 9  & Gabriel Jesus     \\ \hline
 \end{tabular}
 }
-\\ \ownsrc
 \end{table}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Como fazer uma tabela destas?}
 
 \begin{figure}[!t]
-\caption{Código-fonte da tabela mostrada anteriormente}
 \begin{lstlisting}
 \begin{table}[!t]
 \centering
@@ -442,13 +400,11 @@ Goleiro & GOL & 1 & Alisson \\ \hline
  & LAE & 12 & Marcelo \\ \hline
 (@*\ldots*@)
 \end{lstlisting}
-\ownsrc
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Como fazer uma tabela destas?}
 \begin{figure}[!t]
-\caption{Código-fonte da tabela mostrada anteriormente -- segunda parte}
 \begin{lstlisting}
 (@*\ldots*@)
 \multicolumn{1}{|l|}{\multirow{3}{*}{Meio-campo}} & VOL & 17 & Fernandinho \\ \cline{2-4} 
@@ -461,7 +417,6 @@ Goleiro & GOL & 1 & Alisson \\ \hline
 \\ \vspace{0.2cm} \small{Fonte: Autoria própria}
 \end{table}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 \end{frame}
 
@@ -482,7 +437,7 @@ Goleiro & GOL & 1 & Alisson \\ \hline
 \begin{frame}[fragile] \frametitle{Refência a tabelas}
 
 \begin{itemize}
-	\item Vimos como fazer refência à seções, e como o Latex consegue lidar com a numeração automaticamente
+	\item Vimos como fazer refência à seções, e como o LaTeX consegue lidar com a numeração automaticamente
 	\item Eventualmente um trabalho conterá tabelas as quais precisam ser explicadas durante o texto
 	\item Tabelas são usualmente numeradas, e assim podemos referenciá-las
 \end{itemize}
@@ -491,7 +446,6 @@ Goleiro & GOL & 1 & Alisson \\ \hline
 
 \begin{frame}[fragile,label={slide:referenciatabela}] \frametitle{Refência a tabelas}
 \begin{figure}[!t]
-\caption{Exemplo de tabelas}
 \begin{lstlisting}
 \begin{table}
 \centering
@@ -503,7 +457,6 @@ Goleiro & GOL & 1 & Alisson \\ \hline
 
 Na Tabela~@*\seli{\textbackslash{}ref\{minhatabela\}}*@, são mostrados (@*\ldots*@)
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}

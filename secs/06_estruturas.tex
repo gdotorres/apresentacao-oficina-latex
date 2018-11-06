@@ -15,35 +15,31 @@
 
 \begin{frame}[fragile] \frametitle{Listas não numeradas}
 \begin{figure}[!t]
-\caption{Exemplo de estrutura de lista não numerada}
 \begin{lstlisting}
 @*\sel{\textbackslash{}begin\{itemize\}}*@
 	\item Um item
 	\item Outro item
 @*\sel{\textbackslash{}end\{itemize\}}*@
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
 	\item \sel{\textbackslash{}begin\{itemize\}} e \sel{\textbackslash{}end\{itemize\}}
 	\begin{itemize}
 		\item Denomina um \textbf{ambiente} de nome \texttt{itemize}, o qual permite construir listas não numeradas
-		\item Todo tipo de comando onde for utilizado neste estilo (\texttt{begin} e \texttt{end}) é chamado de ambiente em Latex
+		\item Todo tipo de comando onde for utilizado neste estilo (\texttt{begin} e \texttt{end}) é chamado de ambiente em LaTeX
 	\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Listas não numeradas}
 \begin{figure}[!t]
-\caption{Exemplo de estrutura de lista não numerada}
 \begin{lstlisting}
 \begin{itemize}
 	@*\sel{\textbackslash{}item}*@ Um item
 	@*\sel{\textbackslash{}item}*@ Outro item
 \end{itemize}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -57,14 +53,12 @@
 
 \begin{frame}[fragile] \frametitle{Listas enumeradas}
 \begin{figure}[!t]
-\caption{Exemplo de estrutura de lista enumerada}
 \begin{lstlisting}
 @*\sel{\textbackslash{}begin\{enumerate\}}*@
 	\item Primeiro item enumerado
 	\item Segundo item enumerado
 @*\sel{\textbackslash{}end\{enumerate\}}*@
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -77,14 +71,12 @@
 
 \begin{frame}[fragile] \frametitle{Listas enumeradas}
 \begin{figure}[!t]
-\caption{Exemplo de estrutura de lista enumeradas}
 \begin{lstlisting}
 \begin{enumerate}
 	@*\sel{\textbackslash{}item}*@ Um item
 	@*\sel{\textbackslash{}item}*@ Outro item
 \end{enumerate}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -94,7 +86,7 @@
 		\begin{itemize}
 			\item Neste caso é enumerada porque está \textbf{dentro do ambiente} \texttt{enumerate}
 		\end{itemize}
-		\item O Latex efetua a numeração da lista automaticamente
+		\item O LaTeX efetua a numeração da lista automaticamente
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -114,7 +106,6 @@
 
 \begin{frame}[fragile] \frametitle{Listas enumeradas manipuladas}
 \begin{figure}[!t]
-\caption{Exemplo de estrutura de lista enumeradas}
 \begin{lstlisting}
 (@*\ldots*@)
 \usepackage{enumitem}
@@ -126,7 +117,6 @@
 	\item Outro item
 \end{enumerate}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -142,7 +132,7 @@
 \begin{itemize}
 	\item Argumento para formatação de lista enumerada é opcional
 	\begin{itemize}
-		\item Qualquer argumento que vier dentro de colchetes é considerado pela linguagem do Latex como argumento opcional
+		\item Qualquer argumento que vier dentro de colchetes é considerado pela linguagem do LaTeX como argumento opcional
 	\end{itemize}
 	\item Se nada é passado para \texttt{\textbackslash{}begin\{enumerate\}} o padrão é utilizado (lista enumerada numericamente)
 \end{itemize}
@@ -150,31 +140,27 @@
 
 \begin{frame}[fragile] \frametitle{Formatos de listas enumeradas}
 \begin{table}[!h]
-	\centering
-	\caption{Comando usado e formato da lista enumerada}
-	\begin{tabular}{l|l}		
-	\hline
-		\textbf{Comando}       & \textbf{Formato} \\ \hline
-		\textbackslash{}alph   & a. b. c.         \\ \hline
-		\textbackslash{}Alph   & A. B. C          \\ \hline
-		\textbackslash{}arabic & 1. 2. 3.         \\ \hline
-		\textbackslash{}roman  & i. ii. iii.      \\ \hline
-		\textbackslash{}Roman  & I. II. III       \\ \hline
-	\end{tabular}
-	\\ \vspace{0.3cm} \ownsrc
+\centering
+\begin{tabular}{l|l}		
+\hline
+	\textbf{Comando}       & \textbf{Formato} \\ \hline
+	\textbackslash{}alph   & a. b. c.         \\ \hline
+	\textbackslash{}Alph   & A. B. C          \\ \hline
+	\textbackslash{}arabic & 1. 2. 3.         \\ \hline
+	\textbackslash{}roman  & i. ii. iii.      \\ \hline
+	\textbackslash{}Roman  & I. II. III       \\ \hline
+\end{tabular}
 \end{table}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Listas descritivas}
 \begin{figure}[!t]
-\caption{Exemplo de estrutura de lista não numerada}
 \begin{lstlisting}
 @*\sel{\textbackslash{}begin\{description\}}*@
 	\item [Banana] Uma fruta
 	\item [Maçã] Outra fruta
 @*\sel{\textbackslash{}end\{description\}}*@
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -187,14 +173,12 @@
 
 \begin{frame}[fragile] \frametitle{Listas descritivas}
 \begin{figure}[!t]
-\caption{Exemplo de estrutura de lista não numerada}
 \begin{lstlisting}
 \begin{description}
 	@*\sel{\textbackslash{}item [Banana]}*@ Uma fruta
 	@*\sel{\textbackslash{}item [Maçã]}*@ Outra fruta
 \begin{description}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -211,7 +195,6 @@
 
 \begin{frame}[fragile] \frametitle{\textit{Mix} de listas}
 \begin{figure}[!t]
-\caption{Exemplo de listas aninhadas}
 \begin{lstlisting}
 \begin{itemize}
 	\item Um item não numerado
@@ -223,7 +206,6 @@
 	\end{enumerate}
 \end{itemize}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}

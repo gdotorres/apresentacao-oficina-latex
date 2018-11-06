@@ -9,7 +9,6 @@
 
 \begin{frame}[fragile] \frametitle{Iniciando um documento no formato .tex}
 \begin{figure}[!t]
-\caption{Exemplo de "Olá mundo"~em Latex}
 \begin{lstlisting}
 \documentclass{article}
 
@@ -17,13 +16,11 @@
 	Ola mundo
 \end{document}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Iniciando um documento no formato .tex}
 \begin{figure}[!t]
-\caption{Exemplo de "Olá mundo"~em Latex}
 \begin{lstlisting}
 @*\sel{$\backslash$documentclass\{article\}}*@
 
@@ -31,7 +28,6 @@
 	Ola mundo
 \end{document}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -49,7 +45,6 @@
 
 \begin{frame}[fragile] \frametitle{Iniciando um documento no formato .tex}
 \begin{figure}[!t]
-\caption{Exemplo de "Olá mundo"~em Latex}
 \begin{lstlisting}
 \documentclass{article}
 
@@ -57,7 +52,6 @@
 	Ola mundo
 @*\sel{$\backslash$end\{document\}}*@
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -104,22 +98,21 @@
 
 \begin{frame} \frametitle{Localidade}
 \begin{itemize}
-	\item Por padrão, o~Latex~por si só não é suficiente
+	\item Por padrão, o~LaTeX~por si só não é suficiente
 	\item Precisamos estabelecer a localidade para a escrita correta de textos
-	\item \textbf{Caso de exemplo:} Documento simples com a visualização do texto 
 	\begin{itemize}
-		\item Pasta \textbf{examples}: Pasta 01\_localizacao\_incorreta
+		\item Textos em português: Apresetam caracteres com acentuação (ã, ê, í, etc.)
 	\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame} \frametitle{Localidade}
 \begin{itemize}
-	\item Adaptar o Latex~para a localidade que desejamos
+	\item Adaptar o LaTeX~para a localidade que desejamos
 	\begin{itemize}
 		\item Suporte a diversas linguagens espalhadas pelo globo
 	\end{itemize}
-	\item Modificar para o Latex conseguir interpretar os acentos corretamente -- além de alterar a localidade para português brasileiro.
+	\item Modificar para o LaTeX conseguir interpretar os acentos corretamente -- além de alterar a localidade para português brasileiro.
 	\begin{itemize}
 		\item \textbf{Preâmbulo} do documento
 	\end{itemize}
@@ -128,7 +121,6 @@
 
 \begin{frame}[fragile] \frametitle{Localidade}
 \begin{figure}[!t]
-\caption{Inserindo localidade em Latex}
 \begin{lstlisting}
 \documentclass{article}
 
@@ -138,13 +130,12 @@
 \begin{document}
 (@*\ldots*@)
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
 	\item \sel{$\backslash$usepackage[brazil]\{babel\}}
 	\begin{itemize}
-		\item Datas e palavras fornecidas pela formatação do Latex~são traduzidas para português brasileiro
+		\item Datas e palavras fornecidas pela formatação do LaTeX~são traduzidas para português brasileiro
 		\item Se desejável, pode-se trocar a opção entre colchetes para a linguagem que quiser
 		\begin{itemize}
 			\item \texttt{english}, \texttt{spanish}, \ldots
@@ -155,7 +146,6 @@
 
 \begin{frame}[fragile] \frametitle{Localidade}
 \begin{figure}[!t]
-\caption{Inserindo localidade em Latex}
 \begin{lstlisting}
 \documentclass{article}
 
@@ -165,21 +155,19 @@
 \begin{document}
 (@*\ldots*@)
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
 	\item \sel{$\backslash$usepackage[utf8]\{inputenc\}}
 	\begin{itemize}
 		\item Mostra corretamente caracteres com acento, cedilha, dentre outros
-		\item Tecnicamente, faz com que a codificação lida como entrada pelo Latex seja UTF-8, a qual tem suporte a vários caracteres (inclusos os utilizados no português)
+		\item Tecnicamente, faz com que a codificação lida como entrada pelo LaTeX seja UTF-8, a qual tem suporte a vários caracteres (inclusos os utilizados no português)
 	\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Localidade}
 \begin{figure}[!t]
-\caption{Inserindo localidade em Latex}
 \begin{lstlisting}
 \documentclass{article}
 
@@ -189,7 +177,6 @@
 \begin{document}
 (@*\ldots*@)
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -200,10 +187,3 @@
 	\end{itemize}
 \end{itemize}
 \end{frame}
-
-
-
-
-
-
-

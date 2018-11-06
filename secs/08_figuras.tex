@@ -12,9 +12,7 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Figuras}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de figura}
 \begin{lstlisting}
 \begin{figure}[!h]
 \centering
@@ -23,21 +21,18 @@
 \source{A internet}
 \end{figure}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 \vspace{-0.5cm}
 \begin{figure}[!h]
 \centering
 \caption{Uma bola}
 \includegraphics[scale=0.09]{ibagens/ball.jpg}
-\\ \small{Fonte: A internet}
+\\ \vspace{0.1cm} \small{Fonte: A internet}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{O ambiente \texttt{figure}}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de figura}
 \begin{lstlisting}
 @*\sel{\textbackslash{}begin\{figure\}[!h]}*@
 \centering
@@ -46,22 +41,19 @@
 \source{A internet}
 @*\sel{\textbackslash{}end\{figure\}[!h]}*@
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
 	\item \sel{\textbackslash{}begin\{figure\}} e \sel{\textbackslash{}end\{figure\}}
 	\begin{itemize}
 		\item Define um ambiente de tabela
-		\item Pode ter como argumento opcional o \textbf{posicionamento} do \textit{float} dentro do documento\footnote{Ver Tabela~\ref{tab:posicaofloats}}
+		\item Pode ter como argumento opcional o \textbf{posicionamento} do \textit{float} dentro do documento\footnote{Ver Tabela do \textit{slide}~\ref{tab:posicaofloats}}
 	\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{O ambiente \texttt{figure}}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de figura}
 \begin{lstlisting}
 \begin{figure}[!h]
 @*\sel{\textbackslash{}centering}*@
@@ -70,7 +62,6 @@
 @*\selii{\textbackslash{}source\{A internet\}}*@
 \end{figure}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -82,9 +73,7 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Inclusão de imagens}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de figura}
 \begin{lstlisting}
 \begin{figure}[!h]
 \centering
@@ -93,13 +82,12 @@
 \source{A internet}
 \end{figure}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
 	\item \sel{\textbackslash{}includegraphics[opcional]\{arquivo\}}
 	\begin{itemize}
-		\item Faz a inclusão de um arquivo de imagem externo ao Latex
+		\item Faz a inclusão de um arquivo de imagem externo ao LaTeX
 		\item Em \texttt{arquivo} é passado o caminho onde está a imagem que deseja-se mostrar no documento
 		\begin{itemize}
 			\item Formatos aceitos: \texttt{pdf}, \texttt{png} e \texttt{jpg}
@@ -110,9 +98,7 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Inclusão de imagens}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de figura}
 \begin{lstlisting}
 \begin{figure}[!h]
 \centering
@@ -121,7 +107,6 @@
 \source{A internet}
 \end{figure}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -139,9 +124,7 @@
 
 %\usepackage{graphicx}
 \begin{frame}[fragile] \frametitle{Inclusão de imagens}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de figura}
 \begin{lstlisting}
 @*\seli{\textbackslash{}usepackage\{graphicx\}}*@
 (@*\ldots*@)
@@ -154,13 +137,12 @@
 \source{A internet}
 \end{figure}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
 	\item \sel{\textbackslash{}includegraphics[opcional]\{arquivo\}}
 	\begin{itemize}
-		\item Por padrão, o Latex \textbf{não} tem suporte a este comando
+		\item Por padrão, o LaTeX \textbf{não} tem suporte a este comando
 		\item Necessariedade de um pacote
 		\begin{itemize}
 			\item \texttt{graphicx}
@@ -181,7 +163,6 @@
 
 \begin{frame}[fragile] \frametitle{Refência a figuras}
 \begin{figure}[!t]
-\caption{Exemplo de figuras}
 \begin{lstlisting}
 \begin{figure}[!h]
 \centering
@@ -193,7 +174,6 @@
 
 Na Figura~@*\seli{\textbackslash{}ref\{minhaimagem\}}*@, são mostrados (@*\ldots*@)
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}

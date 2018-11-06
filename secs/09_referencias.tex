@@ -11,14 +11,11 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Bibliografia do zero (Estilo)}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Bibliografia do zero}
 \begin{lstlisting}
 @*\sel{\textbackslash{}bibliographystyle\{acm\}}*@
 \bibliography{bibliografia.bib}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -34,14 +31,11 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Bibliografia do zero (Estilo)}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Bibliografia do zero}
 \begin{lstlisting}
 @*\sel{\textbackslash{}bibliographystyle\{acm\}}*@
 \bibliography{bibliografia.bib}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -51,6 +45,7 @@
 		\item Tal qual existem as classes de documentos, também existem classes para bibliografia
 		\begin{itemize}
 			\item Comumente fornecidas em arquivos .bst
+			\item Utiliza uma linguagem específica para formatação de bibliografias, a qual tem uma certa complexidade
 		\end{itemize}
 		\item Classe do TCC do TSI: abnt.bst
 	\end{itemize}
@@ -58,14 +53,11 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Bibliografia do zero}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Bibliografia do zero}
 \begin{lstlisting}
 \bibliographystyle{acm}
 @*\sel{\textbackslash{}bibliography\{bibliografia.bib\}}*@
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -82,9 +74,7 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Arquivo .bib}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de uma entrada no arquivo .bib}
 \begin{lstlisting}[language=BibTeX]
 @*\sel{@article}*@{rodriguez1985consideraciones,
   title={Consideraciones relativas a la actuaci{\'o}n y l{\'\i}mites de las oposiciones fonol{\'o}gicas interrupto/continuo y tenso/flojo en espa{\~n}ol},
@@ -96,7 +86,6 @@
   publisher={Servicio de Publicaciones}
 }
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -108,7 +97,6 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Arquivo .bib (Tipos)}
-
 \begin{itemize}
 	\item Existem diversos tipos para uma entrada de bibliografia
 	\item Formatos aceitos: 
@@ -116,13 +104,10 @@
 		\item @article ,@book ,@collectedbook ,@conference ,@electronic ,@ieeetranbstctl ,@inbook ,@incollectedbook ,@incollection ,@injournal ,@inproceedings ,@manual ,@mastersthesis ,@misc ,@patent ,@periodical ,@phdthesis ,@preamble ,@proceedings ,@standard ,@string ,@techreport e @unpublished
 	\end{itemize}
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Arquivo .bib}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de uma entrada no arquivo .bib}
 \begin{lstlisting}[language=BibTeX]
 @article{@*\sel{rodriguez1985consideraciones}*@,
   title={Consideraciones relativas a la actuación y límites de las oposiciones fonológicas interrupto/continuo y tenso/flojo en español},
@@ -134,7 +119,6 @@
   publisher={Servicio de Publicaciones}
 }
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -149,9 +133,7 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Arquivo .bib}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Exemplo de uma entrada no arquivo .bib}
 \begin{lstlisting}[language=BibTeX]
 @article{rodriguez1985consideraciones,
   @*\sel{title}*@={Consideraciones relativas a la actuación y límites de las oposiciones fonológicas interrupto/continuo y tenso/flojo en español},
@@ -163,7 +145,6 @@
   @*\sel{publisher}*@={Servicio de Publicaciones}
 }
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
@@ -228,13 +209,10 @@
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Citação bibliográfica}
-\vspace{-0.5cm}
 \begin{figure}[!t]
-\caption{Citação bibliográfica}
 \begin{lstlisting}
 	Como dito em~@*\sel{\textbackslash{}cite\{rodriguez1985consideraciones\}}*@, existem alguns fatores (@*\ldots*@)
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}

@@ -15,18 +15,16 @@
 
 \begin{frame}[fragile] \frametitle{Secionamento}
 \begin{table}[!t]
-	\centering
-	\caption{Tipo de seção e seu respectivo comando para o template do TCC do TSI}	
-	\begin{tabular}{l|l}
-	\hline
-		\textbf{Nível da seção} & \textbf{Comando}                      \\ \hline
-		Primária                & \texttt{\textbackslash{}chapter\{nome\}}       \\ \hline
-		Secundária              & \texttt{\textbackslash{}section\{nome\}}       \\ \hline
-		Terciária               & \texttt{\textbackslash{}subsection\{nome\}}    \\ \hline
-		Quaternária             & \texttt{\textbackslash{}subsubsection\{nome\}} \\ \hline
-		Quinária                & \texttt{\textbackslash{}paragraph\{nome\}}     \\ \hline
-	\end{tabular}
-	\\ \vspace{0.3cm} \ownsrc
+\centering
+\begin{tabular}{l|l}
+\hline
+	\textbf{Nível da seção} & \textbf{Comando}                      \\ \hline
+	Primária                & \texttt{\textbackslash{}chapter\{nome\}}       \\ \hline
+	Secundária              & \texttt{\textbackslash{}section\{nome\}}       \\ \hline
+	Terciária               & \texttt{\textbackslash{}subsection\{nome\}}    \\ \hline
+	Quaternária             & \texttt{\textbackslash{}subsubsection\{nome\}} \\ \hline
+	Quinária                & \texttt{\textbackslash{}paragraph\{nome\}}     \\ \hline
+\end{tabular}
 \end{table}
 
 \begin{itemize}
@@ -48,26 +46,24 @@
 \begin{frame}[fragile] \frametitle{Secionamento (outras informações)}
 \begin{itemize}
 	\item Outras classes de documentos podem definir diferentes estilos de secionamento
-	\item Dentro da linguagem Latex são fornecidos até 7 níveis de secionamento
+	\item Dentro da linguagem LaTeX são fornecidos até 7 níveis de secionamento
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Secionamento (outras informações)}
 \begin{table}[!t]
-	\centering
-	\caption{Tipo de seção e seu respectivo comando para o \textit{template} do TCC do TSI}	
-	\begin{tabular}{l|l}
-	\hline
-		\textbf{Nível da seção} & \textbf{Comando}									\\ \hline
-		Primária				& \texttt{\textbackslash{}part\{nome\}}				\\ \hline
-		Secundária				& \texttt{\textbackslash{}chapter\{nome\}}			\\ \hline
-		Terciária				& \texttt{\textbackslash{}section\{nome\}}			\\ \hline
-		Quaternária				& \texttt{\textbackslash{}subsection\{nome\}}		\\ \hline
-		Quinária				& \texttt{\textbackslash{}subsubsection\{nome\}}	\\ \hline
-		Senária					& \texttt{\textbackslash{}paragraph\{nome\}}		\\ \hline
-		Setenária				& \texttt{\textbackslash{}subparagraph\{nome\}}		\\ \hline
-	\end{tabular}
-	\\ \vspace{0.3cm} \ownsrc
+\centering
+\begin{tabular}{l|l}
+\hline
+	\textbf{Nível da seção} & \textbf{Comando}									\\ \hline
+	Primária				& \texttt{\textbackslash{}part\{nome\}}				\\ \hline
+	Secundária				& \texttt{\textbackslash{}chapter\{nome\}}			\\ \hline
+	Terciária				& \texttt{\textbackslash{}section\{nome\}}			\\ \hline
+	Quaternária				& \texttt{\textbackslash{}subsection\{nome\}}		\\ \hline
+	Quinária				& \texttt{\textbackslash{}subsubsection\{nome\}}	\\ \hline
+	Senária					& \texttt{\textbackslash{}paragraph\{nome\}}		\\ \hline
+	Setenária				& \texttt{\textbackslash{}subparagraph\{nome\}}		\\ \hline
+\end{tabular}
 \end{table}
 
 \begin{itemize}
@@ -86,44 +82,38 @@
 
 \begin{frame}[fragile] \frametitle{Referência à seções}
 \begin{figure}[!t]
-\caption{Exemplo de rotulação e referenciação de seções}
 \begin{lstlisting}
 	\section{Laranjas} @*\sel{\textbackslash{}label\{s:laranjas\}}*@
 	Laranja é laranja por causa da cor laranja ou por causa da fruta laranja?
 
 	\section{Maracujás} @*\sel{\textbackslash{}label\{s:maracujas\}}*@
 	Uma questão foi feita na Seção~\ref{s:laranjas}. Os maracujás tem a cor amarela.
-\end{document}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
 	\item \sel{\textbackslash{}label\{nome do rótulo\}}
 	\begin{itemize}
-		\item Rotula um elemento em Latex. Neste caso, estamos utilizando para uma \texttt{section}
+		\item Rotula um elemento em LaTeX. Neste caso, estamos utilizando para uma \texttt{section}
 	\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile] \frametitle{Referência à seções}
 \begin{figure}[!t]
-\caption{Exemplo de rotulação e referenciação de seções}
 \begin{lstlisting}
 \section{Laranjas} \label{s:laranjas}
 Laranja é laranja por causa da cor laranja ou por causa da fruta laranja?
 
 \section{Maracujás} \label{s:maracujas}
 Uma questão foi feita na Seção~@*\sel{\textbackslash{}ref\{s:laranjas\}}*@. Os maracujás tem a cor amarela.
-\end{document}
 \end{lstlisting}
-\ownsrc
 \end{figure}
 
 \begin{itemize}
 	\item \sel{\textbackslash{}ref\{nome do rótulo\}}
 	\begin{itemize}
-		\item Referencia um elemento em Latex previamente rotulado. O Latex encarrega-se de mostrar a numeração (neste caso) da seção corretamente
+		\item Referencia um elemento em LaTeX previamente rotulado. O LaTeX encarrega-se de mostrar a numeração (neste caso) da seção corretamente
 	\end{itemize}
 \end{itemize}
 \end{frame}

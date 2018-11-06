@@ -42,6 +42,11 @@
 	\item Arquivo \textbf{textsi.cls}: Define a formatação geral do documento
 	\begin{itemize}
 		\item Margens, fonte, espaçamento, \ldots
+		\item Define usos de alguns pacotes
+		\begin{itemize}
+			\item Requeridos para o desenvolvimento desta classe
+		\end{itemize}
+		\item Desenvolvido na linguagem TeX
 	\end{itemize}
 	\item Arquivo \textbf{exemplo-tcc.tex}: Pacotes adicionais e corpo do documento
 	\begin{itemize}
@@ -60,7 +65,14 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame} \frametitle{Comentários?}
+\begin{frame}[fragile] \frametitle{Comentários?}
+
+\begin{lstlisting}
+@*\sel{\% Começo de um documento .tex}*@
+\documentclass{article} 
+(...)
+\end{lstlisting}
+
 \begin{itemize}
 	\item Estamos utilizando uma linguagem de programação para descrever nosso documento
 	\item Como linguagem de programação, ela fornece meio para comentários

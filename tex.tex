@@ -16,6 +16,24 @@
 \usepackage{array}
 \usepackage{multirow}
 
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{fp}
+\usepackage{xfp}
+\usepackage{xparse}
+
+\ExplSyntaxOn
+\NewExpandableDocumentCommand{\fpcompare}{ m m m }
+ {
+  % #1 = test to perform
+  % #2 = text for the true case
+  % #3 = text for the false case
+  \fp_compare:nTF { #1 } { #2 } { #3 }
+ }
+\ExplSyntaxOff
+
+\usepackage{todonotes}
+
 % This is necessary to perform changes into original texttt
 \usepackage{textcomp}
 \usepackage{upquote}
@@ -140,7 +158,7 @@ literate=%
 
 \title[\LaTeX]{\LaTeX}
 
-\author{Giovane Torres}
+\author{Giovane de Oliveira Torres}
 \institute[UFPel]
 {
 Instituto Federal Sul-Riograndense \\
@@ -148,7 +166,7 @@ Câmpus Pelotas \\
 Tecnologia em Sistemas para Internet \\
 \medskip \textit{ggiovaneotorres@gmail.com} 
 }
-\date{18 de Agosto de 2018}
+\date{7 de Novembro de 2018}
 
 \begin{document}
 
